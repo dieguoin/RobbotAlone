@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
-
+    
     const float SPEED = 5;
     private int moveingKeys = 0;
     private float speed = 0;
     const float DEFAULTMULTIPLAYER = 1;
     const float MULTIPLAYER = 1.3f;
     private float speedMultiplayer = 1;
+    [SerializeField] private GameObject gameManager;
 
     //Collision
     public float jumpForce;
@@ -24,15 +24,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        keys.Add("up", KeyCode.W);
-        keys.Add("Down", KeyCode.S);
-        keys.Add("Left", KeyCode.A);
-        keys.Add("Right", KeyCode.D);
-        keys.Add("Run", KeyCode.LeftControl);
-        keys.Add("Pause", KeyCode.Escape);
-        keys.Add("Jump", KeyCode.Space);
-        keys.Add("Shoot", KeyCode.Insert);
     }
 
     // Update is called once per frame
@@ -44,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void CheckMovement()
     {
-        if (Input.GetKeyDown(keys["Right"]))
+        if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Right")))
         {
             if (IsGrounded())
             {
@@ -56,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             }
             moveingKeys++;
         }
-        if (Input.GetKeyDown(keys["Left"]))
+        if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Left")))
         {
             if (IsGrounded())
             {
@@ -69,11 +60,11 @@ public class PlayerMovement : MonoBehaviour
             moveingKeys++;
         }
         speedMultiplayer = DEFAULTMULTIPLAYER;
-        if (Input.GetKey(keys["Run"]))
+        if (Input.GetKey(gameManager.GetComponent<GameManager>().GetAction("Run")))
         {
             speedMultiplayer = MULTIPLAYER;
         }
-        if (Input.GetKeyUp(keys["Right"]))
+        if (Input.GetKeyUp(gameManager.GetComponent<GameManager>().GetAction("Right")))
         {
             moveingKeys--;
             if (IsGrounded())
@@ -85,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
                 speed = -1;
             }
         }
-        if (Input.GetKeyUp(keys["Left"]))
+        if (Input.GetKeyUp(gameManager.GetComponent<GameManager>().GetAction("Left")))
         {
             moveingKeys--;
             if (IsGrounded())
@@ -122,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
     private void CheckJump()
     {
         
-        if (Input.GetKeyDown(keys["Jump"]) && IsGrounded())
+        if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Jump")) && IsGrounded())
         {
             Debug.Log("jump");
             rb.AddForce(new Vector2(0, jumpForce * speedMultiplayer));
