@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private GameObject gameManager;
     
     const float SPEED = 5;
     private int moveingKeys = 0;
@@ -11,19 +12,30 @@ public class PlayerMovement : MonoBehaviour
     const float DEFAULTMULTIPLAYER = 1;
     const float MULTIPLAYER = 1.3f;
     private float speedMultiplayer = 1;
-    [SerializeField] private GameObject gameManager;
+    
 
+    private Inventory inventory;
+    
     //Collision
+    [Header("collision")]
     public float jumpForce;
     public Vector3 squareSize;
     public float maxDistance;
     public LayerMask layerMask;
     private Rigidbody2D rb;
-    
+
+    //shoot
+    [Header("shoot")]
+    [SerializeField] private GameObject bulletPrefab;
+    private int bulletDirection = 1;
+    public int shootForce;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        inventory = GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -31,33 +43,20 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckMovement();
         CheckJump();
+        CheckShoot();
         transform.position = transform.position + new Vector3(speed * speedMultiplayer * Time.deltaTime, 0, 0);
     }
     private void CheckMovement()
     {
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Right")))
         {
-            if (IsGrounded())
-            {
-                speed = SPEED;
-            }
-            else
-            {
-                speed = 1;
-            }
-            moveingKeys++;
+            ChangeSpeed(SPEED);
+            moveingKeys = (moveingKeys < 2) ? moveingKeys + 1: 2;
         }
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Left")))
         {
-            if (IsGrounded())
-            {
-                speed = -SPEED;
-            }
-            else
-            {
-                speed = -1;
-            }
-            moveingKeys++;
+            ChangeSpeed(-SPEED);
+            moveingKeys = (moveingKeys < 2) ? moveingKeys + 1: 2;
         }
         speedMultiplayer = DEFAULTMULTIPLAYER;
         if (Input.GetKey(gameManager.GetComponent<GameManager>().GetAction("Run")))
@@ -66,36 +65,44 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyUp(gameManager.GetComponent<GameManager>().GetAction("Right")))
         {
-            moveingKeys--;
-            if (IsGrounded())
-            {
-                speed = -SPEED;
-            }
-            else
-            {
-                speed = -1;
-            }
+            moveingKeys = (moveingKeys > 0) ? moveingKeys - 1: 0;
+            if(moveingKeys > 0)
+                ChangeSpeed(-SPEED);
         }
         if (Input.GetKeyUp(gameManager.GetComponent<GameManager>().GetAction("Left")))
         {
-            moveingKeys--;
-            if (IsGrounded())
-            {
-                speed = SPEED;
-            }
-            else
-            {
-                speed = 1;
-            }
+            moveingKeys = (moveingKeys > 0) ? moveingKeys - 1: 0;
+            if(moveingKeys > 0)
+                ChangeSpeed(SPEED);
         }
         if(IsGrounded() && moveingKeys != 0)
         {
-            speed = (speed > 0) ? SPEED : -SPEED;
+            ChangeSpeed((speed > 0) ? SPEED : -SPEED);
         }
         if (moveingKeys == 0)
         {
-            speed = 0;
+            ChangeSpeed(0);
         }
+    }
+    private void ChangeSpeed(float newSpeed)
+    {
+        if (IsGrounded())
+        {
+            speed = newSpeed;
+        }
+        else
+        {
+            speed = (newSpeed < 0) ? -1 : (newSpeed > 0) ? 1 : 0;
+        }
+        if(speed > 0)
+        {
+            bulletDirection = 1;
+        }
+        else if(speed < 0)
+        {
+            bulletDirection = -1;
+        }
+        //bulletDirection = (speed > 0) ? 1 : ((speed < 0) ? -1 : bulletDirection);
     }
     private bool IsGrounded()
     {
@@ -115,8 +122,19 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Jump")) && IsGrounded())
         {
-            Debug.Log("jump");
             rb.AddForce(new Vector2(0, jumpForce * speedMultiplayer));
+        }
+    }
+    private void CheckShoot()
+    {
+        if (!inventory.HasObject("Gun"))
+        {
+            return;
+        }
+        if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Shoot")))
+        {
+            GameObject bullet = GameObject.Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletDirection * shootForce, 0));
         }
     }
 }

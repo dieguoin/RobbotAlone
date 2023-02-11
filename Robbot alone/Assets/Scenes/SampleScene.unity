@@ -625,6 +625,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  bulletPrefab: {fileID: 5801944083430336476, guid: 99806abe74ff6ec42b80b9e376788912, type: 3}
+  shootForce: 200
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

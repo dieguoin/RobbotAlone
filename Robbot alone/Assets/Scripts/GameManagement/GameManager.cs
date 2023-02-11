@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         keys.Add("Run", KeyCode.LeftControl);
         keys.Add("Pause", KeyCode.Escape);
         keys.Add("Jump", KeyCode.Space);
-        keys.Add("Shoot", KeyCode.Insert);
+        keys.Add("Shoot", KeyCode.RightShift);
     }
 
     public KeyCode GetAction(string key)
