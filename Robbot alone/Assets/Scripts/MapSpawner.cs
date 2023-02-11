@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Collider2D collider;
+    public new Collider2D collider;
 
     public GameObject mapRegion;
 
@@ -25,11 +25,11 @@ public class MapSpawner : MonoBehaviour
     {
         if(collision.name == "Player")
         {
-            mapRegion.active = true;
+            mapRegion.SetActive(true);
 
             if(unLoadRegion != null)
             {
-                unLoadRegion.active = false;
+                unLoadRegion.SetActive(false);
             }
         }
 
