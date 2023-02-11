@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8368491231bf0ec4fb5a39615a35bbb2, type: 3}
   m_Name: MachineGun
   m_EditorClassIdentifier: 
-  name: 
+  name: MachineGun
   sprite: {fileID: 0}
-  objectName: 
+  objectName: Gun
