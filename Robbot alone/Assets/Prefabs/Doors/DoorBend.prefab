@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 891885931}
   - component: {fileID: 891885933}
   - component: {fileID: 891885932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: JumpingChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 7181712049997491655}
   - component: {fileID: 7181712049997491654}
   - component: {fileID: 7181712049997491649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorBend
   m_TagString: Untagged
   m_Icon: {fileID: 0}

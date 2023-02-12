@@ -6,6 +6,7 @@ public class LeftArm : BodyParts
 {
     //[SerializeField] private GameObject bulletPrefab;
     [SerializeField] const int SHOOTFORCE = 200;
+
     public override void Effect()
     {
         switch (part.weapon)
