@@ -35,10 +35,10 @@ public class PlayerMovement : MonoBehaviour
     public bool bendedDown;
     public bool isJumping;
 
+    [Header("Life")]
     public int life;
     public Image lifeImg;
     public float lifeUI; //Normalized 0-1
-
     
     public struct Stats
     {
@@ -247,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
         lifeImg.fillAmount = lifeUI;
         if(life <= 0)
         {
-            //DEAD
+            gameManager.GetComponent<GameManager>().Death();
         }
     }
 }

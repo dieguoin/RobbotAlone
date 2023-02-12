@@ -205,6 +205,9 @@ MonoBehaviour:
   pointPrefab: {fileID: 5583377814718665099, guid: 8596ed572890ed8438bbeda7ef3a8875, type: 3}
   patrolPositions: []
   speed: 10
+  dmgCD: 0
+  dmg: 1
+  timeDmg: 0
 --- !u!61 &2939487932515381400
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -45,6 +45,12 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         startPanel.SetActive(false);
+    }
+
+    public void Death()
+    {
+        Time.timeScale = 0;
+        defeatPanel.SetActive(true);
 
     }
 }
