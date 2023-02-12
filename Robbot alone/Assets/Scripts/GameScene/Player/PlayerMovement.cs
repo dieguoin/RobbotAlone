@@ -30,12 +30,15 @@ public class PlayerMovement : MonoBehaviour
     private int bulletDirection = 1;
     public int shootForce;
 
+    public bool bendedDown; 
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        bendedDown = false;
     }
 
     // Update is called once per frame
@@ -76,7 +79,17 @@ public class PlayerMovement : MonoBehaviour
             if(moveingKeys > 0)
                 ChangeSpeed(SPEED);
         }
-        if(IsGrounded() && moveingKeys != 0)
+        if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Control")))
+        {
+            Debug.Log("AGACHARSE");
+            bendedDown = true;
+            transform.position = transform.position + new Vector3(0.0f,0.0f,-0.00001f);
+        }
+        if (Input.GetKeyUp(gameManager.GetComponent<GameManager>().GetAction("Control")))
+        {
+            bendedDown = false;
+        }
+            if (IsGrounded() && moveingKeys != 0)
         {
             ChangeSpeed((speed > 0) ? SPEED : -SPEED);
         }

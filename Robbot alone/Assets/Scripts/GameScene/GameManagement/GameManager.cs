@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         keys.Add("Jump", KeyCode.Space);
         keys.Add("RightAction", KeyCode.Mouse1);
         keys.Add("LeftAction", KeyCode.Mouse0);
+        keys.Add("Control", KeyCode.LeftControl);
     }
 
     public KeyCode GetAction(string key)
