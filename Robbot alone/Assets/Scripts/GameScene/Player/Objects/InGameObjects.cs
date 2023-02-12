@@ -9,7 +9,7 @@ public class InGameObjects : ScriptableObject
     public Sprite sprite;
     public string objectName;
     public string description;
-    public enum Type { Head, RightArm, LeftArm, Body, LeftLeg, RightLeg};
+    public enum Type { Head, RightArm, LeftArm, Body, Leg};
     public Type type;
 
     public int Life;

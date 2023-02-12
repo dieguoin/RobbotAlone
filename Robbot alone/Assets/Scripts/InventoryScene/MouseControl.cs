@@ -38,7 +38,7 @@ public class MouseControl : MonoBehaviour
         
         if(originalGrabbed.transform.parent != null)
         {
-            if(originalGrabbed.transform.parent.tag == "InventoryCell")
+            if(originalGrabbed.transform.parent.tag == "InventoryHead" || originalGrabbed.transform.parent.tag == "InventoryLeftArm" || originalGrabbed.transform.parent.tag == "InventoryRightArm" || originalGrabbed.transform.parent.tag == "InventoryBody" || originalGrabbed.transform.parent.tag == "InventoryLegs")
             {
 
                 originalGrabbed.transform.parent.GetComponent<Image>().enabled = true;
@@ -93,7 +93,27 @@ public class MouseControl : MonoBehaviour
         }
         else
         {
-            if(collision.tag == "InventoryCell")
+            if(collision.tag == "InventoryHead" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Head)
+            {
+                positionToDrop = collision.gameObject;
+            }
+            else
+            if (collision.tag == "InventoryLeftArm" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.LeftArm)
+            {
+                positionToDrop = collision.gameObject;
+            }
+            else
+            if (collision.tag == "InventoryRightArm" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.RightArm)
+            {
+                positionToDrop = collision.gameObject;
+            }
+            else
+            if (collision.tag == "InventoryBody" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Body)
+            {
+                positionToDrop = collision.gameObject;
+            }
+            else
+            if (collision.tag == "InventoryLegs" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Leg)
             {
                 positionToDrop = collision.gameObject;
             }

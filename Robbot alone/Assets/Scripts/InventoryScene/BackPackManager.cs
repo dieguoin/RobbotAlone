@@ -20,6 +20,8 @@ public class BackPackManager : MonoBehaviour
             newG.GetComponent<Image>().sprite = g.GetComponent<SpriteRenderer>().sprite;
             newG.GetComponent<SpriteRenderer>().sprite = g.GetComponent<SpriteRenderer>().sprite;
             newG.GetComponent<SpriteRenderer>().size = new Vector2(30, 30);
+            Component c = newG.AddComponent(typeof(ObjectInteraction));
+            c.GetComponent<ObjectInteraction>().objectType = g.GetComponent<ObjectInteraction>().objectType;
             backPackList.Add(newG);
             //newG.GetComponent<Image>().sprite = g.GetComponent<SpriteRenderer>().sprite;
         }
