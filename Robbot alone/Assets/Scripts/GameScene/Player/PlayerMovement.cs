@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
 
     public bool bendedDown;
     public bool isJumping;
+
+    public int life;
+    public Image lifeImg;
+    public float lifeUI; //Normalized 0-1
 
     
     public struct Stats
@@ -68,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         rightArm.part = (inventory.bodyParts[2] != null) ? inventory.bodyParts[2] : defaultRightArm;
         body.part = (inventory.bodyParts[3] != null) ? inventory.bodyParts[3] : defaultBody;
         legs.part = (inventory.bodyParts[4] != null) ? inventory.bodyParts[4] : defaultLegs;
-        //Calcular Vida
+        //Calcular Vida Máxima
         Stats.lifePoints = head.part.Life;
         Stats.lifePoints += leftArm.part.Life;
         Stats.lifePoints += rightArm.part.Life;
@@ -102,6 +107,10 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         bendedDown = false;
         isJumping = false;
+
+        life = Stats.lifePoints;
+        lifeUI = 1;
+        lifeImg.fillAmount = 1;
     }
 
     // Update is called once per frame
@@ -228,5 +237,17 @@ public class PlayerMovement : MonoBehaviour
         }
         Debug.Log("right");
         rightArm.Effect();
+    }
+
+    public void ChangeLife(int dmgReceived)
+    {
+        life -= dmgReceived;
+        lifeUI = (float)life / (float)Stats.lifePoints;
+
+        lifeImg.fillAmount = lifeUI;
+        if(life == 0)
+        {
+            //DEAD
+        }
     }
 }

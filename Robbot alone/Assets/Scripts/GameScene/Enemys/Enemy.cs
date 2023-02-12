@@ -12,6 +12,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] private List<Transform> patrolPositions = new List<Transform>();
     public float speed;
 
+    public bool dmgCD;
+    public int dmg;
+    public float timeDmg;
+
+    private void Start()
+    {
+        dmgCD = true;
+    }
+
     private void Update()
     {
         switch (currentState)
@@ -39,9 +48,36 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            if (dmgCD)
+            {
+                Debug.Log("DO DMG " + dmg);
+                collision.gameObject.GetComponent<PlayerMovement>().ChangeLife(dmg);
+                ///IMPLEMENTAR BAJAR VIDA AL JUGADOR
+                StartCoroutine(CoolingDown());
+
+            }
+
+
+        }
+    }
     public void GeneratePoint()
     {
         GameObject newPoint = GameObject.Instantiate(pointPrefab, transform.parent);
         patrolPositions.Add(newPoint.transform);
+    }
+
+    public IEnumerator CoolingDown()
+    {
+        dmgCD = false;
+
+        yield return new WaitForSeconds(timeDmg);
+
+        dmgCD = true;
+
     }
 }
