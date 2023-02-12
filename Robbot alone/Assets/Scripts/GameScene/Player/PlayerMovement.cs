@@ -177,6 +177,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         Debug.Log("Left");
+        leftArm.Effect();
     }
     private void CheckRightAction()
     {
@@ -185,5 +186,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         Debug.Log("right");
+        rightArm.Effect();
     }
 }

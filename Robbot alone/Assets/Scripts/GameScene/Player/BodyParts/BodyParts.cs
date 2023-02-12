@@ -6,5 +6,5 @@ public class BodyParts : MonoBehaviour
 {
     public InGameObjects part;
 
-    protected virtual void Effect() { }
+    public virtual void Effect() { }
 }
