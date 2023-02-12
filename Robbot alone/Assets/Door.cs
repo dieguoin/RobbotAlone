@@ -21,6 +21,8 @@ public class Door : MonoBehaviour
 
 
 
+
+
     void Start()
     {
         opened = false;
@@ -65,6 +67,8 @@ public class Door : MonoBehaviour
             }
         }
     }
+
+ 
 
     public IEnumerator CoolingDown()
     {

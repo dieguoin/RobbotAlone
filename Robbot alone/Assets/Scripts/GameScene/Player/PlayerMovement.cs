@@ -32,7 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private int bulletDirection = 1;
     public int shootForce;
 
-    public bool bendedDown; 
+    public bool bendedDown;
+    public bool isJumping;
 
 
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         bendedDown = false;
+        isJumping = false;
     }
 
     // Update is called once per frame
@@ -130,8 +132,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Physics2D.BoxCast(transform.position, squareSize, 0, -transform.up, maxDistance, layerMask))
         {
+            isJumping = false;
             return true;
         }
+        isJumping = true;
         return false;
     }
     void OnDrawGizmos()
@@ -145,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Jump")) && IsGrounded())
         {
             rb.AddForce(new Vector2(0, jumpForce * speedMultiplayer));
+           // isJumping = true;
         }
     }
     private void CheckLeftAction()
