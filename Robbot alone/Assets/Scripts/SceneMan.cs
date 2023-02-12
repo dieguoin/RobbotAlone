@@ -6,9 +6,25 @@ using UnityEngine.UI;
 
 public class SceneMan : MonoBehaviour
 {
-    void Awake()
+    private static SceneMan instance;
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            DestroyObject(gameObject);
+        }
+    }
+    private void OnDestroy()
+    {
+        if (instance == this)
+        {
+            instance = null;
+        }
     }
     public void changeScene(string name)
     {

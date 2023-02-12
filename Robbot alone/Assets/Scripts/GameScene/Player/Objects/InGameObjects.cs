@@ -11,9 +11,13 @@ public class InGameObjects : ScriptableObject
     public string description;
     public enum Type { Head, RightArm, LeftArm, Body, Leg};
     public Type type;
+    public enum ArmType { Sword, Gun}
+    public ArmType weapon;
+    public GameObject bulletPrefab;
 
     public int Life;
     public int Attack;
     public int Defense;
     public int Speed;
 }
+

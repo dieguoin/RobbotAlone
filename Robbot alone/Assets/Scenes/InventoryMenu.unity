@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc144e693fda5d74c8c1810109b736ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultObject: {fileID: 0}
+  defaultObject: {fileID: 2843898416738153760, guid: d29a18180c830b84587d663f70bbab3d, type: 3}
 --- !u!1 &254083424
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,11 +623,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  objectsInventory:
-  - {fileID: 7862572095175227157, guid: a01c14598305a1040a11f5c948e8b337, type: 3}
-  objectsBackPack:
-  - {fileID: 7862572095175227157, guid: a01c14598305a1040a11f5c948e8b337, type: 3}
-  - {fileID: 7862572095175227157, guid: 5fe2faea88fb3f548a8eeec87d6ce92a, type: 3}
+  objectsInventory: []
+  objectsBackPack: []
 --- !u!4 &299210930
 Transform:
   m_ObjectHideFlags: 0

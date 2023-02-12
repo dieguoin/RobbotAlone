@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     const float DEFAULTMULTIPLAYER = 1;
     const float MULTIPLAYER = 1.3f;
     private float speedMultiplayer = 1;
-
     const float bendDownSpeed = 2f;
     
 
@@ -34,13 +33,32 @@ public class PlayerMovement : MonoBehaviour
 
     public bool bendedDown;
     public bool isJumping;
+    [Header("BodyParts")]
+    public BodyParts head;
+    public BodyParts body;
+    public BodyParts leftArm;
+    public BodyParts rightArm;
+    public BodyParts legs;
 
+    [SerializeField] private InGameObjects defaultHead;
+    [SerializeField] private InGameObjects defaultBody;
+    [SerializeField] private InGameObjects defaultLeftArm;
+    [SerializeField] private InGameObjects defaultRightArm;
+    [SerializeField] private InGameObjects defaultLegs;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+    }
     void Start()
     {
+        head.part = (inventory.bodyParts[0] != null) ? inventory.bodyParts[0] : defaultHead;
+        leftArm.part = (inventory.bodyParts[1] != null) ? inventory.bodyParts[1] : defaultLeftArm;
+        rightArm.part = (inventory.bodyParts[2] != null) ? inventory.bodyParts[2] : defaultRightArm;
+        body.part = (inventory.bodyParts[3] != null) ? inventory.bodyParts[3] : defaultBody;
+        legs.part = (inventory.bodyParts[4] != null) ? inventory.bodyParts[4] : defaultLegs;
         rb = GetComponent<Rigidbody2D>();
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         bendedDown = false;
         isJumping = false;
     }
@@ -159,11 +177,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         Debug.Log("Left");
-        //if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Shoot")))
-        //{
-        //    GameObject bullet = GameObject.Instantiate(bulletPrefab, transform.position, transform.rotation);
-        //    bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletDirection * shootForce, 0));
-        //}
     }
     private void CheckRightAction()
     {
