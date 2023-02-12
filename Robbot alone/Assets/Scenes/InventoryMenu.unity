@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc144e693fda5d74c8c1810109b736ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyParts: []
 --- !u!1 &254083424
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +617,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0141d02b1ae2d44089cfc4e67152b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyParts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   objectsInventory:
   - {fileID: 7862572095175227157, guid: a01c14598305a1040a11f5c948e8b337, type: 3}
   objectsBackPack:
@@ -1475,10 +1482,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 637170156}
-        m_TargetAssemblyTypeName: SceneMan, Assembly-CSharp
-        m_MethodName: changeScene
-        m_Mode: 5
+      - m_Target: {fileID: 1145539404}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: Explore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
