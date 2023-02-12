@@ -9,12 +9,14 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     private Inventory inventory;
     private InventoryManager im;
+    private BackPackManager bpm;
 
     private void Awake()
     {
         sceneManager = GameObject.Find("SceneMan").GetComponent<SceneMan>();
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         im = GameObject.Find("InventorySlots").GetComponent<InventoryManager>();
+        bpm = GameObject.Find("BackPack").GetComponent<BackPackManager>();
     }
     public void Restart()
     {
@@ -37,6 +39,11 @@ public class CanvasManager : MonoBehaviour
         for(int i = 0; i < inventory.bodyParts.Count; i++)
         {
             inventory.bodyParts[i] = im.GetBodyPart(i);
+        }
+        inventory.objectsBackPack.Clear();
+        for(int i = 0; i < bpm.backPackList.Count; i++)
+        {
+            inventory.objectsBackPack.Add(bpm.backPackList[i].GetComponent<ObjectInteraction>().objectType);
         }
         sceneManager.changeScene("SampleScene");
     }

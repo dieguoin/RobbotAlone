@@ -9,7 +9,7 @@ public class ObjectInteraction : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            collision.GetComponent<Inventory>().AddObject(gameObject);
+            collision.GetComponent<Inventory>().AddObject(objectType);
             Destroy(gameObject);
         }
     }

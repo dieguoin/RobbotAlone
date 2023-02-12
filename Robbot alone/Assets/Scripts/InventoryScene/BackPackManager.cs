@@ -14,14 +14,14 @@ public class BackPackManager : MonoBehaviour
     }
     private void Start()
     {
-        foreach(GameObject g in inventory.objectsBackPack)
+        foreach(InGameObjects g in inventory.objectsBackPack)
         {
             GameObject newG = GameObject.Instantiate(defaultObject, transform.GetChild(0).GetChild(0).GetChild(0));
-            newG.GetComponent<Image>().sprite = g.GetComponent<SpriteRenderer>().sprite;
-            newG.GetComponent<SpriteRenderer>().sprite = g.GetComponent<SpriteRenderer>().sprite;
+            newG.GetComponent<Image>().sprite = g.sprite;
+            newG.GetComponent<SpriteRenderer>().sprite = g.sprite;
             newG.GetComponent<SpriteRenderer>().size = new Vector2(30, 30);
-            Component c = newG.AddComponent(typeof(ObjectInteraction));
-            c.GetComponent<ObjectInteraction>().objectType = g.GetComponent<ObjectInteraction>().objectType;
+            newG.AddComponent(typeof(ObjectInteraction));
+            newG.GetComponent<ObjectInteraction>().objectType = g;
             backPackList.Add(newG);
             //newG.GetComponent<Image>().sprite = g.GetComponent<SpriteRenderer>().sprite;
         }
