@@ -245,7 +245,7 @@ public class PlayerMovement : MonoBehaviour
         lifeUI = (float)life / (float)Stats.lifePoints;
 
         lifeImg.fillAmount = lifeUI;
-        if(life == 0)
+        if(life <= 0)
         {
             //DEAD
         }
