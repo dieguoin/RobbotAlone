@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     const float DEFAULTMULTIPLAYER = 1;
     const float MULTIPLAYER = 1.3f;
     private float speedMultiplayer = 1;
+
+    const float bendDownSpeed = 2f;
     
 
     private Inventory inventory;
@@ -54,12 +56,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Right")))
         {
-            ChangeSpeed(SPEED);
+            if (bendedDown)
+                ChangeSpeed(bendDownSpeed);
+            else
+                ChangeSpeed(SPEED);
             moveingKeys = (moveingKeys < 2) ? moveingKeys + 1: 2;
         }
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Left")))
         {
-            ChangeSpeed(-SPEED);
+            if (bendedDown)
+                ChangeSpeed(-bendDownSpeed);
+            else
+                ChangeSpeed(-SPEED);
             moveingKeys = (moveingKeys < 2) ? moveingKeys + 1: 2;
         }
         speedMultiplayer = DEFAULTMULTIPLAYER;
@@ -70,26 +78,26 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(gameManager.GetComponent<GameManager>().GetAction("Right")))
         {
             moveingKeys = (moveingKeys > 0) ? moveingKeys - 1: 0;
-            if(moveingKeys > 0)
+            if(moveingKeys > 0 && !bendedDown)
                 ChangeSpeed(-SPEED);
         }
         if (Input.GetKeyUp(gameManager.GetComponent<GameManager>().GetAction("Left")))
         {
             moveingKeys = (moveingKeys > 0) ? moveingKeys - 1: 0;
-            if(moveingKeys > 0)
+            if(moveingKeys > 0 && !bendedDown)
                 ChangeSpeed(SPEED);
         }
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Control")))
         {
-            Debug.Log("AGACHARSE");
             bendedDown = true;
             transform.position = transform.position + new Vector3(0.0f,0.0f,-0.00001f);
+            //ChangeSpeed(bendDownSpeed);
         }
         if (Input.GetKeyUp(gameManager.GetComponent<GameManager>().GetAction("Control")))
         {
             bendedDown = false;
         }
-            if (IsGrounded() && moveingKeys != 0)
+            if (IsGrounded() && moveingKeys != 0 && !bendedDown)
         {
             ChangeSpeed((speed > 0) ? SPEED : -SPEED);
         }
