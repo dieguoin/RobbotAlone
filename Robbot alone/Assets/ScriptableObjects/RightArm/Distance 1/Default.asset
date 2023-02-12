@@ -16,9 +16,9 @@ MonoBehaviour:
   sprite: {fileID: 0}
   objectName: Default
   description: default
-  type: 3
-  weapon: 0
-  bulletPrefab: {fileID: 0}
+  type: 1
+  weapon: 1
+  bulletPrefab: {fileID: 5801944083430336476, guid: 99806abe74ff6ec42b80b9e376788912, type: 3}
   Life: 1
   Attack: 1
   Defense: 1
