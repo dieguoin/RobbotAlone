@@ -33,6 +33,16 @@ public class PlayerMovement : MonoBehaviour
 
     public bool bendedDown;
     public bool isJumping;
+
+    
+    public struct Stats
+    {
+        public static int lifePoints;
+        public static int attack;
+        public static int defense;
+        public static int speed;
+    }
+
     [Header("BodyParts")]
     public BodyParts head;
     public BodyParts body;
@@ -58,6 +68,37 @@ public class PlayerMovement : MonoBehaviour
         rightArm.part = (inventory.bodyParts[2] != null) ? inventory.bodyParts[2] : defaultRightArm;
         body.part = (inventory.bodyParts[3] != null) ? inventory.bodyParts[3] : defaultBody;
         legs.part = (inventory.bodyParts[4] != null) ? inventory.bodyParts[4] : defaultLegs;
+        //Calcular Vida
+        Stats.lifePoints = head.part.Life;
+        Stats.lifePoints += leftArm.part.Life;
+        Stats.lifePoints += rightArm.part.Life;
+        Stats.lifePoints += body.part.Life;
+        Stats.lifePoints += legs.part.Life;
+
+        //Calcular Ataque
+        Stats.attack = head.part.Attack;
+        Stats.attack += leftArm.part.Attack;
+        Stats.attack += rightArm.part.Attack;
+        Stats.attack += body.part.Attack;
+        Stats.attack += legs.part.Attack;
+
+        //Calcular Defensa
+        Stats.defense = head.part.Defense;
+        Stats.defense += leftArm.part.Defense;
+        Stats.defense += rightArm.part.Defense;
+        Stats.defense += body.part.Defense;
+        Stats.defense += legs.part.Defense;
+
+        //Calcular velocidad
+        Stats.speed = head.part.Speed;
+        Stats.speed += leftArm.part.Speed;
+        Stats.speed += rightArm.part.Speed;
+        Stats.speed += body.part.Speed;
+        Stats.speed += legs.part.Speed;
+
+
+
+        Debug.Log(Stats.lifePoints);
         rb = GetComponent<Rigidbody2D>();
         bendedDown = false;
         isJumping = false;
