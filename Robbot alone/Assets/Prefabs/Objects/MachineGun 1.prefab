@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7183071773243499419}
   - component: {fileID: 8883563784315900558}
   m_Layer: 0
-  m_Name: MachineGun
+  m_Name: MachineGun 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0.03653574, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990ba2ad5af32d645bc5936da3dc78d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType: {fileID: 0}
 --- !u!58 &7183071773243499419
 CircleCollider2D:
   m_ObjectHideFlags: 0

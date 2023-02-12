@@ -43,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckMovement();
         CheckJump();
-        CheckShoot();
+        CheckLeftAction();
+        CheckRightAction();
         transform.position = transform.position + new Vector3(speed * speedMultiplayer * Time.deltaTime, 0, 0);
     }
     private void CheckMovement()
@@ -125,16 +126,25 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce * speedMultiplayer));
         }
     }
-    private void CheckShoot()
+    private void CheckLeftAction()
     {
-        if (!inventory.HasObject("Gun"))
+        if (!Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("LeftAction")))
         {
             return;
         }
-        if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Shoot")))
+        Debug.Log("Left");
+        //if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Shoot")))
+        //{
+        //    GameObject bullet = GameObject.Instantiate(bulletPrefab, transform.position, transform.rotation);
+        //    bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletDirection * shootForce, 0));
+        //}
+    }
+    private void CheckRightAction()
+    {
+        if (!Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("RightAction")))
         {
-            GameObject bullet = GameObject.Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletDirection * shootForce, 0));
+            return;
         }
+        Debug.Log("right");
     }
 }

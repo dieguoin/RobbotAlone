@@ -15,3 +15,9 @@ MonoBehaviour:
   name: MachineGun
   sprite: {fileID: 0}
   objectName: Gun
+  description: a
+  type: 1
+  Life: 10
+  Attack: 10
+  Defense: 10
+  Speed: 10
