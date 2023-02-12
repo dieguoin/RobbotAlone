@@ -4934,10 +4934,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 7181712049997491649, guid: dec2495ca4834c94c88005afdd5fc81f, type: 3}
-      propertyPath: timeActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7181712049997491651, guid: dec2495ca4834c94c88005afdd5fc81f, type: 3}
       propertyPath: m_Name
       value: DoorBend
