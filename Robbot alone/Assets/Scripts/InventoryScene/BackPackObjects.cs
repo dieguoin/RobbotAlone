@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class BackPackObjects : MonoBehaviour
 {
-    [SerializeField] private GameObject mousePosition;
-
+    public InGameObjects inGameObject;
 }

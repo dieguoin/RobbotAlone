@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectInteraction : MonoBehaviour
 {
-    [SerializeField] private InGameObjects objectType;
+    public InGameObjects objectType;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")

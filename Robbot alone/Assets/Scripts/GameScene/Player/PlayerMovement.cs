@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        inventory = GetComponent<Inventory>();
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
     }
 
     // Update is called once per frame

@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<InGameObjects> bodyParts = new List<InGameObjects>(5);
 
-    // Update is called once per frame
-    void Update()
+    public InGameObjects GetBodyPart(int i)
     {
-        
+        Debug.Log(transform.GetChild(1).GetChild(i));
+        return (transform.GetChild(1).GetChild(i).childCount > 0) ? transform.GetChild(1).GetChild(i).GetChild(0).gameObject.GetComponent<ObjectInteraction>().objectType : null;
     }
 }
