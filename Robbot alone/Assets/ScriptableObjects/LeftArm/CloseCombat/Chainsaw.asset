@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chainsaw
   m_EditorClassIdentifier: 
   name: Chainsaw
-  sprite: {fileID: 0}
+  sprite: {fileID: 650418142, guid: 63332e05a8d3e3740bdb81fb6a7540df, type: 3}
   objectName: Chainsaw
   description: a
   type: 2

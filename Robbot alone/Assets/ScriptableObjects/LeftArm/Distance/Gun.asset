@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun
   m_EditorClassIdentifier: 
   name: Gun
-  sprite: {fileID: 0}
+  sprite: {fileID: -2098991187, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
   objectName: Gun
   description: c
   type: 2

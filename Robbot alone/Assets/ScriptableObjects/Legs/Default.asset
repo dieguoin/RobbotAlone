@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default
   m_EditorClassIdentifier: 
   name: default
-  sprite: {fileID: 0}
+  sprite: {fileID: 791702781, guid: e2af2187a2779cd44a523758acede510, type: 3}
   objectName: Default
   description: default
   type: 4

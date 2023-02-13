@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8368491231bf0ec4fb5a39615a35bbb2, type: 3}
-  m_Name: ShotGun
+  m_Name: Alpha
   m_EditorClassIdentifier: 
-  name: ShotGun
-  sprite: {fileID: -609415616, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
-  objectName: ShotGun
-  description: b
-  type: 2
-  weapon: 1
+  name: Alpha
+  sprite: {fileID: -1712256412, guid: e2af2187a2779cd44a523758acede510, type: 3}
+  objectName: Alpha
+  description: A
+  type: 4
+  weapon: 0
   bulletPrefab: {fileID: 0}
-  Life: 5
-  Attack: 5
-  Defense: 5
-  Speed: 5
+  Life: 15
+  Attack: 15
+  Defense: 15
+  Speed: 15

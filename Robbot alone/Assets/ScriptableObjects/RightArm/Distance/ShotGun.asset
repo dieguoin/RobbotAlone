@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: -609415616, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
   objectName: ShotGun
   description: b
-  type: 2
+  type: 1
   weapon: 1
   bulletPrefab: {fileID: 0}
   Life: 5

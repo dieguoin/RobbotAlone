@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8368491231bf0ec4fb5a39615a35bbb2, type: 3}
-  m_Name: ShotGun
+  m_Name: Gun
   m_EditorClassIdentifier: 
-  name: ShotGun
-  sprite: {fileID: -609415616, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
-  objectName: ShotGun
-  description: b
-  type: 2
+  name: Gun
+  sprite: {fileID: -2098991187, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
+  objectName: Gun
+  description: c
+  type: 1
   weapon: 1
   bulletPrefab: {fileID: 0}
-  Life: 5
-  Attack: 5
-  Defense: 5
-  Speed: 5
+  Life: 2
+  Attack: 2
+  Defense: 2
+  Speed: 2
