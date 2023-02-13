@@ -15,6 +15,7 @@ TagManager:
   - InventoryBody
   - InventoryLegs
   - Module
+  - Sword
   layers:
   - Default
   - TransparentFX
