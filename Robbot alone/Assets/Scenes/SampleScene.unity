@@ -1545,9 +1545,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d41f6e662d98842957ac2d9f66780c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modules:
+  modulesLvl1:
   - {fileID: 3253605809344831847, guid: 2ced7379db448e54291a2c9483e19ee8, type: 3}
   - {fileID: 709299312791965354, guid: 10a54a4e9e21fae41819ff9753b40bdc, type: 3}
+  - {fileID: 709299312791965354, guid: 9133bd985b1d02e4c952706a689a3cd3, type: 3}
+  - {fileID: 709299312791965354, guid: 5a493d2489f00e64397e74974c08e093, type: 3}
+  - {fileID: 709299312791965354, guid: ca2ed273239d3264eb1e7ac9b059678c, type: 3}
+  - {fileID: 709299312791965354, guid: 12815934dbaf00d4e830fc693511a525, type: 3}
+  modulesLvl2:
+  - {fileID: 3253605809344831847, guid: b17eb4105c6bd3844ad0313ae7b1f482, type: 3}
+  - {fileID: 709299312791965354, guid: 1656133bb6e9efc40bc13d1d99aa8934, type: 3}
+  - {fileID: 709299312791965354, guid: b5d8d5298509c574999d5896c00185e2, type: 3}
+  - {fileID: 709299312791965354, guid: de0f71d3478eaa44fa961b822606a6d2, type: 3}
+  - {fileID: 709299312791965354, guid: d04468df3aa6fc048b4f17ab5e1871f1, type: 3}
+  - {fileID: 709299312791965354, guid: e0173fb4d0a5f6c4e878cf2c36d9475e, type: 3}
+  modulesLvl3:
+  - {fileID: 3253605809344831847, guid: e22cec0f4588905438cbd772be64a817, type: 3}
+  - {fileID: 709299312791965354, guid: de44ee3aee9a2204f836a9e5e33a9644, type: 3}
+  - {fileID: 709299312791965354, guid: a02caded50143b940904307c1213dc3e, type: 3}
+  - {fileID: 709299312791965354, guid: 81fa44b46256b734c9e833f8f31a1862, type: 3}
+  - {fileID: 709299312791965354, guid: dbe2b41f0a979bb43a655a725f49dc33, type: 3}
+  - {fileID: 709299312791965354, guid: 2d3745366d0146349a9fc16daa4b93ab, type: 3}
 --- !u!1 &984891587
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,8 +3051,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  objectsInventory: []
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   objectsBackPack: []
+  lvls: 
 --- !u!4 &1464355571
 Transform:
   m_ObjectHideFlags: 0

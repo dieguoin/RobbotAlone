@@ -131,9 +131,7 @@ public class PlayerMovement : MonoBehaviour
         bendedDown = false;
         isJumping = false;
 
-        life = Stats.lifePoints;
-        lifeUI = 1;
-        lifeImg.fillAmount = 1;
+      
         jumped = false;
 
         modules = new Module[3];
@@ -153,18 +151,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (inventory.bodyParts[i].type == InGameObjects.Type.Module)
                 {
-                    if (inventory.bodyParts[i].name == "Jetpack")
-                    {
-                        AddModule(inventory.bodyParts[i].name, 0, inventory.bodyParts[i].sprite);
-                    }
-                    if (inventory.bodyParts[i].name == "Shield")
-                    {
-                        AddModule(inventory.bodyParts[i].name, 0, inventory.bodyParts[i].sprite);
-
-                    }
+                       AddModule(inventory.bodyParts[i].name, 0, inventory.bodyParts[i].sprite);
                 }
             }
         }
+        life = Stats.lifePoints;
+        lifeUI = 1;
+        lifeImg.fillAmount = 1;
 
     }
 
@@ -339,6 +332,7 @@ public class PlayerMovement : MonoBehaviour
         }
         modules[index] = m;
         uiModules[index].sprite = sprite;
+        Debug.Log(sprite.name);
         uiModParent.transform.GetChild(index).gameObject.GetComponent<Image>().sprite = sprite;
         uiModParent.transform.GetChild(index).gameObject.GetComponent<Image>().enabled = true;
 
@@ -364,5 +358,44 @@ public class PlayerMovement : MonoBehaviour
             else
                 shieldCD = 50;
         }
+
+        if (mod == "Attack")
+        {
+            if (tipo == 2)
+                Stats.attack += 3;
+            else if (tipo == 3)
+                Stats.attack += 4;
+            else
+                Stats.attack += 5;
+        }
+
+        if(mod == "Speed")
+        {
+            if (tipo == 2)
+                Stats.speed += 3;
+            else if (tipo == 3)
+                Stats.speed += 4;
+            else
+                Stats.speed += 5;
+        }
+        if (mod == "Defense")
+        {
+            if (tipo == 2)
+                Stats.defense += 3;
+            else if (tipo == 3)
+                Stats.defense += 4;
+            else
+                Stats.defense += 5;
+        }
+        if (mod == "Life")
+        {
+            if (tipo == 2)
+                Stats.lifePoints += 3;
+            else if (tipo == 3)
+                Stats.lifePoints += 4;
+            else
+                Stats.lifePoints += 5;
+        }
+
     }
 }

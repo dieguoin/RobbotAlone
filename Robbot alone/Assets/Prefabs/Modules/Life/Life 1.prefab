@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3977664110183430932}
   - component: {fileID: 285317865896692156}
   m_Layer: 0
-  m_Name: Shield
+  m_Name: Life 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 709299312791965354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.27271318, y: 0.27271318, z: 0.27271318}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,18 +61,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.032271147, y: -0.116806984}
+  m_Offset: {x: 0.0060272217, y: 0.11291504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.69, y: 2.69}
+    oldSize: {x: 1.47, y: 1.44}
     newSize: {x: 5.12, y: 5.13}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.446712, y: 5.60106}
+  m_Size: {x: 2.0312805, y: 1.8598022}
   m_EdgeRadius: 0
 --- !u!212 &3977664110183430932
 SpriteRenderer:
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e6690ce0b9a692b4d9cf79c7f1c13799, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0bbe24617c7da194aac82aca3ec6eac0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,6 +138,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb57708cc9eea24cb2f17e682610c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  ingame: {fileID: 11400000, guid: 765ccb98588011147b83399351cc2648, type: 2}
+  ingame: {fileID: 11400000, guid: a2d916c2004435041aa2199059aed5db, type: 2}
   player: {fileID: 0}

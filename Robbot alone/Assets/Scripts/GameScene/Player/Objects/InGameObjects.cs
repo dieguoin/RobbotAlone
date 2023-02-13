@@ -19,5 +19,7 @@ public class InGameObjects : ScriptableObject
     public int Attack;
     public int Defense;
     public int Speed;
+
+    public int lvl;
 }
 

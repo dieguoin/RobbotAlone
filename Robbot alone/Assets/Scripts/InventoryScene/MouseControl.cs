@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MouseControl : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class MouseControl : MonoBehaviour
 
     public Vector2 screenPosition;
     public Vector2 worldPosition;
+
+    public TextMeshProUGUI name;
+    public TextMeshProUGUI type;
+    public TextMeshProUGUI stats;
+    public TextMeshProUGUI def;
+    public TextMeshProUGUI lvl;
+
 
     private void Awake()
     {
@@ -46,7 +54,7 @@ public class MouseControl : MonoBehaviour
         
         if(originalGrabbed.transform.parent != null)
         {
-            if(originalGrabbed.transform.parent.tag == "InventoryHead" || originalGrabbed.transform.parent.tag == "InventoryLeftArm" || originalGrabbed.transform.parent.tag == "InventoryRightArm" || originalGrabbed.transform.parent.tag == "InventoryBody" || originalGrabbed.transform.parent.tag == "InventoryLegs")
+            if(originalGrabbed.transform.parent.tag == "InventoryHead" || originalGrabbed.transform.parent.tag == "InventoryLeftArm" || originalGrabbed.transform.parent.tag == "InventoryRightArm" || originalGrabbed.transform.parent.tag == "InventoryBody" || originalGrabbed.transform.parent.tag == "InventoryLegs" || originalGrabbed.transform.parent.tag == "Module")
             {
 
                 originalGrabbed.transform.parent.GetComponent<Image>().enabled = true;
@@ -102,6 +110,32 @@ public class MouseControl : MonoBehaviour
         }
         else
         {
+            //Debug.Log("**********");
+            if (collision.TryGetComponent(out ObjectInteraction interaction))
+            {
+                InGameObjects selected = interaction.objectType;
+                name.text = selected.name;
+                type.text = selected.type.ToString();
+                if (selected.type == InGameObjects.Type.Module)
+                {
+                    stats.enabled = false;
+                    def.enabled = true;
+                    def.text = selected.description;
+
+                    lvl.enabled = true;
+                    lvl.text = selected.lvl.ToString();
+                }
+                else
+                {
+                    stats.enabled = true;
+                    def.enabled = false;
+                    stats.text = "Attack:     " + selected.Attack + "\nDefense: " + selected.Defense + "\nLife:         " + selected.Life + "\nSpeed:   " + selected.Speed;
+                    lvl.enabled = false;
+                }
+            }
+
+
+
             if(collision.tag == "InventoryHead" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Head)
             {
                 positionToDrop = collision.gameObject;

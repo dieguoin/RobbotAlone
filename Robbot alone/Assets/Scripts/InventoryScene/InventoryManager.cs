@@ -18,9 +18,20 @@ public class InventoryManager : MonoBehaviour
         {
             if(g != null)
             {
-                GameObject newG = GameObject.Instantiate(defaultObject, transform.GetChild(1).GetChild(i));
-                transform.GetChild(1).GetChild(i).GetComponent<Image>().enabled = false;
-                transform.GetChild(1).GetChild(i).GetComponent<BoxCollider2D>().enabled = false;
+                GameObject newG = null;
+                if (i < 5)
+                {
+                    newG = GameObject.Instantiate(defaultObject, transform.GetChild(1).GetChild(i));
+                    transform.GetChild(1).GetChild(i).GetComponent<Image>().enabled = false;
+                    transform.GetChild(1).GetChild(i).GetComponent<BoxCollider2D>().enabled = false;
+                }
+                else
+                {
+                    int j = i - 5;
+                    newG = GameObject.Instantiate(defaultObject, transform.GetChild(2).GetChild(j));
+                    transform.GetChild(2).GetChild(j).GetComponent<Image>().enabled = false;
+                    transform.GetChild(2).GetChild(j).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 newG.GetComponent<Image>().sprite = g.sprite;
                 newG.GetComponent<SpriteRenderer>().sprite = g.sprite;
                 newG.GetComponent<SpriteRenderer>().size = new Vector2(30, 30);

@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8368491231bf0ec4fb5a39615a35bbb2, type: 3}
-  m_Name: JepackScri
+  m_Name: Attack
   m_EditorClassIdentifier: 
-  name: Jetpack
-  sprite: {fileID: 21300000, guid: 6d88a434774fe734389505999ec0888e, type: 3}
-  objectName: Jetpack
-  description: a
+  name: Attack
+  sprite: {fileID: 21300000, guid: 052364fd487e47e49bfb6b4c96baf0f9, type: 3}
+  objectName: Shield
+  description: Improves your Attack damage
   type: 5
   weapon: 1
   bulletPrefab: {fileID: 0}
   Life: 0
-  Attack: 0
+  Attack: 3
   Defense: 0
   Speed: 0
+  lvl: 1
