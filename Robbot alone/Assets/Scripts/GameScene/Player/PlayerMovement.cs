@@ -61,6 +61,29 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private InGameObjects defaultRightArm;
     [SerializeField] private InGameObjects defaultLegs;
 
+
+    [Header("Jetpack")]
+    public float secondJumpMultiplier;
+    public bool jumped;
+
+    [Header("AvailableModules")]
+    public bool secondJump;
+    public bool shield;
+
+    public int shieldCD;
+
+    //Dictionary<string, Module> modules = new Dictionary<string, Module>();
+    // public List<Module> modules = new List<Module>();
+    [SerializeField]
+    public Module[] modules;
+    public int index;
+
+    public Image[] uiModules;
+    public GameObject uiModParent;
+
+
+
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -111,6 +134,18 @@ public class PlayerMovement : MonoBehaviour
         life = Stats.lifePoints;
         lifeUI = 1;
         lifeImg.fillAmount = 1;
+        jumped = false;
+
+        modules = new Module[3];
+        uiModules = new Image[3];
+
+        for (int i = 0; i < uiModParent.transform.childCount; i++)
+        {
+            uiModules[i] = uiModParent.transform.GetChild(i).gameObject.GetComponent<Image>();
+            uiModParent.transform.GetChild(i).gameObject.GetComponent<Image>().enabled = false;
+            uiModules[i].enabled = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -201,6 +236,7 @@ public class PlayerMovement : MonoBehaviour
         if(Physics2D.BoxCast(transform.position, squareSize, 0, -transform.up, maxDistance, layerMask))
         {
             isJumping = false;
+            //jumped = true;
             return true;
         }
         isJumping = true;
@@ -213,10 +249,17 @@ public class PlayerMovement : MonoBehaviour
     }
     private void CheckJump()
     {
-        
+        if(Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Jump"))) {
+                if (secondJump && !jumped && isJumping)
+                {
+                    jumped = true;
+                    rb.AddForce(new Vector2(0, jumpForce * speedMultiplayer * secondJumpMultiplier)); //multiplicar por jumpMultiplier
+                }
+            }
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Jump")) && IsGrounded())
         {
             rb.AddForce(new Vector2(0, jumpForce * speedMultiplayer));
+            jumped = false;
            // isJumping = true;
         }
     }
@@ -241,6 +284,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeLife(int dmgReceived)
     {
+        if (shield)
+        {
+            StartCoroutine(ShieldCooling());
+            return;
+        }
         life -= dmgReceived;
         lifeUI = (float)life / (float)Stats.lifePoints;
 
@@ -248,6 +296,53 @@ public class PlayerMovement : MonoBehaviour
         if(life <= 0)
         {
             gameManager.GetComponent<GameManager>().Death();
+        }
+    }
+
+    IEnumerator ShieldCooling()
+    {
+        shield = false;
+        yield return new WaitForSeconds(shieldCD);
+        shield = true;
+    }
+
+    public void AddModule(string mod, int tipo, Sprite sprite)
+    {
+        Module m = new Module(mod, tipo, sprite);
+        if(index == 2)
+        {
+            index = 0;
+        }
+        else
+        {
+            index++;
+        }
+        modules[index] = m;
+        uiModules[index].sprite = sprite;
+        uiModParent.transform.GetChild(index).gameObject.GetComponent<Image>().sprite = sprite;
+        uiModParent.transform.GetChild(index).gameObject.GetComponent<Image>().enabled = true;
+
+        Debug.Log(modules[index].name);
+
+        if (mod == "Jetpack")
+        {
+            secondJump = true;
+            if (tipo == 2)
+                secondJumpMultiplier = 1.5f;
+            else if (tipo == 3)
+                secondJumpMultiplier = 2.2f;
+            else
+                secondJumpMultiplier = 1.0f;
+        }
+        else if (mod == "Shield")
+        {
+            shield = true;
+            if (tipo == 2)
+                shieldCD = 40;
+            else if (tipo == 3)
+                shieldCD = 30;
+            else
+                shieldCD = 50;
         }
     }
 }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8368491231bf0ec4fb5a39615a35bbb2, type: 3}
-  m_Name: JepackScri
+  m_Name: ShieldScri
   m_EditorClassIdentifier: 
-  name: Jetpack
-  sprite: {fileID: 21300000, guid: 6d88a434774fe734389505999ec0888e, type: 3}
-  objectName: Jetpack
+  name: Shield
+  sprite: {fileID: 21300000, guid: e6690ce0b9a692b4d9cf79c7f1c13799, type: 3}
+  objectName: Shield
   description: a
   type: 5
   weapon: 1

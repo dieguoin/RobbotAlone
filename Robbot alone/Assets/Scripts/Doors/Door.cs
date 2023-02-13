@@ -12,14 +12,14 @@ public class Door : MonoBehaviour
     [Header("DmgDoor")]
     public bool doesDmg;
     public float timeDmg;
-    public float dmg;
+    public int dmg;
     public bool dmgCD;
 
     [Header("BendDownDoor")]
     public bool bendDoor;
     public float timeActive;
 
-
+    public PlayerMovement player;
 
 
 
@@ -27,6 +27,8 @@ public class Door : MonoBehaviour
     {
         opened = false;
         dmgCD = true;
+
+        player = GameObject.Find("Player").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class Door : MonoBehaviour
             if (!opened && doesDmg && dmgCD)
             {
                 Debug.Log("DO DMG " + dmg);
+                player.ChangeLife(dmg);
 
                 ///IMPLEMENTAR BAJAR VIDA AL JUGADOR
                 StartCoroutine(CoolingDown());
