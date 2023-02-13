@@ -33,7 +33,8 @@ public class ModulePicker : MonoBehaviour
         if(collision.name == "Player")
         {
             Inventory inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-            inventory.modulesBackPacK.Add(ingame);
+            //inventory.modulesBackPacK.Add(ingame);
+            inventory.objectsBackPack.Add(ingame);
             player.AddModule(ingame.name, type, ingame.sprite);
             //Añadir variables a PlayerMovement;
             /*

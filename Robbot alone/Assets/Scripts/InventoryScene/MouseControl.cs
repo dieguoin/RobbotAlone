@@ -126,6 +126,11 @@ public class MouseControl : MonoBehaviour
             {
                 positionToDrop = collision.gameObject;
             }
+            else
+            if (collision.tag == "Module" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Module)
+            {
+                positionToDrop = collision.gameObject;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

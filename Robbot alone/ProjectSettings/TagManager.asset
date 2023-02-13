@@ -14,6 +14,7 @@ TagManager:
   - InventoryRightArm
   - InventoryBody
   - InventoryLegs
+  - Module
   layers:
   - Default
   - TransparentFX

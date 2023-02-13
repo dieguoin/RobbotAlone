@@ -34,7 +34,23 @@ public class InventoryManager : MonoBehaviour
     }
     public InGameObjects GetBodyPart(int i)
     {
-        Debug.Log(transform.GetChild(1).GetChild(i));
-        return (transform.GetChild(1).GetChild(i).childCount > 0) ? transform.GetChild(1).GetChild(i).GetChild(0).gameObject.GetComponent<ObjectInteraction>().objectType : null;
+        if(i < 5)
+        {
+            Debug.Log(transform.GetChild(1).GetChild(i));
+            return (transform.GetChild(1).GetChild(i).childCount > 0) ? transform.GetChild(1).GetChild(i).GetChild(0).gameObject.GetComponent<ObjectInteraction>().objectType : null;
+        }
+        else
+        {
+            Debug.Log(i);
+            int j = i - 5;
+            //Debug.Log(transform.GetChild(2).name);
+            Debug.Log(j);
+            Debug.Log(transform.childCount);
+            Debug.Log(transform.GetChild(2).GetChild(j));
+
+            return (transform.GetChild(2).GetChild(j).childCount > 0) ? transform.GetChild(2).GetChild(j).GetChild(0).gameObject.GetComponent<ObjectInteraction>().objectType : null;
+        }
+
+        
     }
 }

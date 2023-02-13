@@ -146,6 +146,26 @@ public class PlayerMovement : MonoBehaviour
             uiModules[i].enabled = false;
         }
 
+
+        for(int i = 0; i< inventory.bodyParts.Count; i++)
+        {
+            if (inventory.bodyParts[i] != null)
+            {
+                if (inventory.bodyParts[i].type == InGameObjects.Type.Module)
+                {
+                    if (inventory.bodyParts[i].name == "Jetpack")
+                    {
+                        AddModule(inventory.bodyParts[i].name, 0, inventory.bodyParts[i].sprite);
+                    }
+                    if (inventory.bodyParts[i].name == "Shield")
+                    {
+                        AddModule(inventory.bodyParts[i].name, 0, inventory.bodyParts[i].sprite);
+
+                    }
+                }
+            }
+        }
+
     }
 
     // Update is called once per frame
