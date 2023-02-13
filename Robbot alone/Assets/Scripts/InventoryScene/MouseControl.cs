@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class MouseControl : MonoBehaviour
 {
-    private GameObject objectToClone = null;
+    public GameObject objectToClone = null;
     private GameObject originalGrabbed = null;
     private GameObject clone = null;
     private GameObject positionToDrop = null;
     private bool objectCloned = false;
     private BackPackManager backPackManager;
     [SerializeField] private ScrollRect menuMovement;
+
+    public Vector2 screenPosition;
+    public Vector2 worldPosition;
 
     private void Awake()
     {
@@ -20,7 +23,12 @@ public class MouseControl : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        //transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        screenPosition = Input.mousePosition;
+
+        worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+        transform.position = worldPosition;
+
     }
     private void OnMouseDown()
     {
@@ -90,6 +98,7 @@ public class MouseControl : MonoBehaviour
         if (!objectCloned && collision.tag == "ObjectToMove")
         {
             objectToClone = collision.gameObject;
+            Debug.Log(collision.name);
         }
         else
         {
