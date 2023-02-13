@@ -5268,7 +5268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8402142946147203118, guid: 48a9052ee6e037249879e35829e5a44c, type: 3}
       propertyPath: dmg
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8402142946147203118, guid: 48a9052ee6e037249879e35829e5a44c, type: 3}
       propertyPath: patrolPositions.Array.size

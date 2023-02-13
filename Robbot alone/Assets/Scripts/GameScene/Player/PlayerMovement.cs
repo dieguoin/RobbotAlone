@@ -126,7 +126,6 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        Debug.Log(Stats.lifePoints);
         rb = GetComponent<Rigidbody2D>();
         bendedDown = false;
         isJumping = false;
@@ -158,7 +157,6 @@ public class PlayerMovement : MonoBehaviour
         life = Stats.lifePoints;
         lifeUI = 1;
         lifeImg.fillAmount = 1;
-
     }
 
     // Update is called once per frame
@@ -282,7 +280,6 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Left");
         leftArm.Effect();
     }
     private void CheckRightAction()
@@ -291,7 +288,6 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        Debug.Log("right");
         rightArm.Effect();
     }
 
@@ -302,7 +298,10 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(ShieldCooling());
             return;
         }
-        life -= dmgReceived;
+        int dmge = dmgReceived - Stats.defense ;
+        if (dmge < 1)
+            dmge = 1;
+        life -= dmge;
         lifeUI = (float)life / (float)Stats.lifePoints;
 
         lifeImg.fillAmount = lifeUI;
@@ -332,11 +331,9 @@ public class PlayerMovement : MonoBehaviour
         }
         modules[index] = m;
         uiModules[index].sprite = sprite;
-        Debug.Log(sprite.name);
         uiModParent.transform.GetChild(index).gameObject.GetComponent<Image>().sprite = sprite;
         uiModParent.transform.GetChild(index).gameObject.GetComponent<Image>().enabled = true;
 
-        Debug.Log(modules[index].name);
 
         if (mod == "Jetpack")
         {
