@@ -19,6 +19,8 @@ public class RegionManager : MonoBehaviour
     public GameObject enemy1Prefab;
     public GameObject enemy2Prefab;
     public GameObject enemy3Prefab;
+    public GameObject lootSpawner;
+
 
     public GameObject SpawnElement(GameObject element)
     {

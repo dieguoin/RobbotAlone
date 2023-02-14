@@ -19,6 +19,12 @@ public class ModulePicker : MonoBehaviour
             type = 2;
         else
             type = 1;*/
+      if(gameObject.GetComponent<SpriteRenderer>().sprite == null)
+        {
+            Debug.Log("NULL SPRITE");
+            gameObject.GetComponent<SpriteRenderer>().sprite = ingame.sprite;
+        }
+
 
     }
 

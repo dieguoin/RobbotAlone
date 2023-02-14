@@ -66,5 +66,9 @@ public class MapGeneratorEditor : Editor
         {
             myRegionManager.SpawnElement(myRegionManager.playerExtractionPoint);
         }
+        if(GUILayout.Button("New Loot Spawer"))
+        {
+            myRegionManager.SpawnElement(myRegionManager.lootSpawner);
+        }
     }
 }
