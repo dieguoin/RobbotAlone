@@ -192,7 +192,7 @@ public class MouseControl : MonoBehaviour
             {
                 stats.enabled = true;
                 def.enabled = false;
-                stats.text = "Attack:     " + selected.Attack + "\nDefense: " + selected.Defense + "\nLife:         " + selected.Life + "\nSpeed:   " + selected.Speed;
+                stats.text = "Attack: " + selected.Attack + "\nDefense: " + selected.Defense + "\nLife: " + selected.Life + "\nSpeed: " + selected.Speed;
                 lvl.enabled = false;
             }
         }
