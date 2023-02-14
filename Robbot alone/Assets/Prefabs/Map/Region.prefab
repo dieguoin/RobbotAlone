@@ -44,14 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20959d27a81d9bc47ae8dfd0a68ffbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backGround: {fileID: 0}
+  backGroundPrefab: {fileID: 478239242802956251, guid: 04e910efa8c562a4ab7604252e31d0d6, type: 3}
   mapSpawnerPrefab: {fileID: 0}
-  floorPrefab: {fileID: 0}
+  playerSpawnPoint: {fileID: 0}
+  playerExtractionPoint: {fileID: 0}
+  floorPrefab: {fileID: 1558249811103397526, guid: 5046a9cdc9477514086d60036fb2898b, type: 3}
   stairsPrefab: {fileID: 0}
-  WallPrefab: {fileID: 0}
-  ceilingPrefab: {fileID: 0}
-  floorDoorPrefab: {fileID: 0}
-  damageDoorPrefab: {fileID: 0}
-  buttonDoorPrefab: {fileID: 0}
-  enemy1Prefab: {fileID: 0}
-  enemy2Prefab: {fileID: 0}
+  WallPrefab: {fileID: 5595594614420804056, guid: d659dce093db2604a9cd983ec818041d, type: 3}
+  ceilingPrefab: {fileID: 1558249811103397526, guid: 5046a9cdc9477514086d60036fb2898b, type: 3}
+  floorDoorPrefab: {fileID: 7181712049997491651, guid: dec2495ca4834c94c88005afdd5fc81f, type: 3}
+  damageDoorPrefab: {fileID: 3274312382131355198, guid: 31459672eabbf24408398e70d4313c69, type: 3}
+  buttonPrefab: {fileID: 1384488743947644931, guid: 525908d20676f7f418fda2d7c3b0c0fc, type: 3}
+  enemy1Prefab: {fileID: 2586087332018404217, guid: 48a9052ee6e037249879e35829e5a44c, type: 3}
+  enemy2Prefab: {fileID: 1907903718830897915, guid: a2182976a9162464392903e5ae533849, type: 3}
   enemy3Prefab: {fileID: 0}

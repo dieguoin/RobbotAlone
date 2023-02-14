@@ -10,6 +10,13 @@ public class MapGeneratorEditor : Editor
         DrawDefaultInspector();
 
         RegionManager myRegionManager = (RegionManager)target;
+        if (GUILayout.Button("New BackGround"))
+        {
+            GameObject backGround = myRegionManager.SpawnElement(myRegionManager.backGroundPrefab);
+            backGround.AddComponent(typeof(SpriteRenderer));
+            backGround.GetComponent<SpriteRenderer>().sprite = myRegionManager.backGround;
+            backGround.GetComponent<SpriteRenderer>().sortingLayerID = -100;
+        }
         if (GUILayout.Button("New Spawner"))
         {
             myRegionManager.SpawnElement(myRegionManager.mapSpawnerPrefab);

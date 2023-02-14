@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RegionManager : MonoBehaviour
 {
+    public Sprite backGround;
+    public GameObject backGroundPrefab;
     public GameObject mapSpawnerPrefab;
     public GameObject playerSpawnPoint;
     public GameObject playerExtractionPoint;
@@ -18,9 +20,10 @@ public class RegionManager : MonoBehaviour
     public GameObject enemy2Prefab;
     public GameObject enemy3Prefab;
 
-    public void SpawnElement(GameObject element)
+    public GameObject SpawnElement(GameObject element)
     {
         GameObject newElement = GameObject.Instantiate(element, transform);
         newElement.transform.localPosition = new Vector3(0, 0);
+        return newElement;
     }
 }
