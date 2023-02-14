@@ -4097,7 +4097,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg
+    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone/GUNS_BottomArm_clavos/LowerArmBone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4107,7 +4107,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg
+    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone/GUNS_BottomArm_clavos/LowerArmBone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4117,67 +4117,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp/FootDown
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp/FootDown
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp/FootDown
+    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone/GUNS_BottomArm_clavos/LowerArmBone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4217,7 +4157,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone/GUNS_BottomArm_clavos/LowerArmBone
+    path: BODY_Sword/Hip/Body/SWORD_UpperArm_Sword/UpperArmBone/SWORD_BottomArm_Sword/LowerArmBone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4227,7 +4167,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone/GUNS_BottomArm_clavos/LowerArmBone
+    path: BODY_Sword/Hip/Body/SWORD_UpperArm_Sword/UpperArmBone/SWORD_BottomArm_Sword/LowerArmBone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4237,7 +4177,37 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone/GUNS_BottomArm_clavos/LowerArmBone
+    path: BODY_Sword/Hip/Body/SWORD_UpperArm_Sword/UpperArmBone/SWORD_BottomArm_Sword/LowerArmBone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4277,96 +4247,6 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: BODY_Sword/Hip/UPPERLEG_Sword (1)/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: BODY_Sword/Hip/UPPERLEG_Sword (1)/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: BODY_Sword/Hip/UPPERLEG_Sword (1)/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: BODY_Sword/Hip/Body
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: BODY_Sword/Hip/Body
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: BODY_Sword/Hip/Body
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: BODY_Sword/Hip/Body/SWORD_UpperArm_Sword/UpperArmBone/SWORD_BottomArm_Sword/LowerArmBone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: BODY_Sword/Hip/Body/SWORD_UpperArm_Sword/UpperArmBone/SWORD_BottomArm_Sword/LowerArmBone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: BODY_Sword/Hip/Body/SWORD_UpperArm_Sword/UpperArmBone/SWORD_BottomArm_Sword/LowerArmBone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
     path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg/MIDDLELEG_Sword/MiddleLeg
     classID: 4
     script: {fileID: 0}
@@ -4388,36 +4268,6 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg/MIDDLELEG_Sword/MiddleLeg
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: BODY_Sword/Hip/Body/Head_Square/Head
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: BODY_Sword/Hip/Body/Head_Square/Head
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: BODY_Sword/Hip/Body/Head_Square/Head
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4457,6 +4307,126 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
+    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp/FootDown
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp/FootDown
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: BODY_Sword/Hip/UPPERLEG_Sword/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp/FootDown
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: BODY_Sword/Hip/Body/GUNS_UpperArm_clavos/UpperArmBone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: BODY_Sword/Hip/Body/Head_Square/Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: BODY_Sword/Hip/Body/Head_Square/Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: BODY_Sword/Hip/Body/Head_Square/Head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: BODY_Sword/Hip/UPPERLEG_Sword (1)/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: BODY_Sword/Hip/UPPERLEG_Sword (1)/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: BODY_Sword/Hip/UPPERLEG_Sword (1)/UpperLeg/MIDDLELEG_Sword/MiddleLeg/FOOT_Sword/FootUp
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
     path: BODY_Sword/Hip/Body/SWORD_UpperArm_Sword/UpperArmBone
     classID: 4
     script: {fileID: 0}
@@ -4478,6 +4448,36 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: BODY_Sword/Hip/Body/SWORD_UpperArm_Sword/UpperArmBone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: BODY_Sword/Hip/Body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: BODY_Sword/Hip/Body
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: BODY_Sword/Hip/Body
     classID: 4
     script: {fileID: 0}
   - curve:

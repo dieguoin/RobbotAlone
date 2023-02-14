@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.U2D.Animation;
 using TMPro;
 
 public class MouseControl : MonoBehaviour
@@ -13,6 +14,28 @@ public class MouseControl : MonoBehaviour
     private bool objectCloned = false;
     private BackPackManager backPackManager;
     [SerializeField] private ScrollRect menuMovement;
+    [Header("Body parts")]
+    public SpriteResolver headSprite;
+    public SpriteResolver bodySprite;
+    public List<SpriteResolver> rightArm;
+    //public SpriteResolver rightUpperArmSprite;
+    //public SpriteResolver rightBottomArmSprite;
+    
+    public List<SpriteResolver> rightLeg;
+    //public SpriteResolver rightUpperLegSprite;
+    //public SpriteResolver rightFootSprite;
+    //public SpriteResolver rightBottomLegSprite;
+    
+    public List<SpriteResolver> leftArm;
+    //public SpriteResolver leftUpperArmSprite;
+    //public SpriteResolver leftBottomArmSprite;
+    
+    public List<SpriteResolver> leftLeg;
+    //public SpriteResolver leftUpperLegSprite;
+    //public SpriteResolver leftBottomLegSprite;
+    //public SpriteResolver leftFootSprite;
+
+    [Header("resto de cosas")]
 
     public Vector2 screenPosition;
     public Vector2 worldPosition;
@@ -23,11 +46,11 @@ public class MouseControl : MonoBehaviour
     public TextMeshProUGUI def;
     public TextMeshProUGUI lvl;
 
-    public GameObject Head;
-    public GameObject Body;
-    public GameObject LeftArm;
-    public GameObject RightArm;
-    public GameObject Legs;
+    //public GameObject Head;
+    //public GameObject Body;
+    //public GameObject LeftArm;
+    //public GameObject RightArm;
+    //public GameObject Legs;
 
 
 
@@ -104,23 +127,30 @@ public class MouseControl : MonoBehaviour
         if(clone.TryGetComponent(out ObjectInteraction interaction)){
             if (interaction.objectType.type == InGameObjects.Type.Head)
             {
-                Head.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                //Head.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                ChangeSprite(headSprite, clone.GetComponent<ObjectInteraction>().objectType);
+
             }
             else if(interaction.objectType.type == InGameObjects.Type.Body)
             {
-                Body.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                //Body.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                ChangeSprite(bodySprite, clone.GetComponent<ObjectInteraction>().objectType);
             }
             else if (interaction.objectType.type == InGameObjects.Type.LeftArm)
             {
-                LeftArm.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                //LeftArm.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                ChangeSprite(leftArm, clone.GetComponent<ObjectInteraction>().objectType);
             }
             else if (interaction.objectType.type == InGameObjects.Type.RightArm)
             {
-                RightArm.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                //RightArm.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                ChangeSprite(rightArm, clone.GetComponent<ObjectInteraction>().objectType);
             }
             else if (interaction.objectType.type == InGameObjects.Type.Leg)
             {
-                Legs.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                //Legs.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+                ChangeSprite(leftLeg, clone.GetComponent<ObjectInteraction>().objectType);
+                ChangeSprite(rightLeg, clone.GetComponent<ObjectInteraction>().objectType);
             }
         }
 
@@ -141,69 +171,83 @@ public class MouseControl : MonoBehaviour
         {
             objectToClone = collision.gameObject;
             Debug.Log(collision.name);
+            return;
+        }
+        //Debug.Log("**********");
+        if (collision.TryGetComponent(out ObjectInteraction interaction))
+        {
+            InGameObjects selected = interaction.objectType;
+            name.text = selected.name;
+            type.text = selected.type.ToString();
+            if (selected.type == InGameObjects.Type.Module)
+            {
+                stats.enabled = false;
+                def.enabled = true;
+                def.text = selected.description;
+
+                lvl.enabled = true;
+                lvl.text = selected.lvl.ToString();
+            }
+            else
+            {
+                stats.enabled = true;
+                def.enabled = false;
+                stats.text = "Attack:     " + selected.Attack + "\nDefense: " + selected.Defense + "\nLife:         " + selected.Life + "\nSpeed:   " + selected.Speed;
+                lvl.enabled = false;
+            }
+        }
+
+
+
+        if(collision.tag == "InventoryHead" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Head)
+        {
+            positionToDrop = collision.gameObject;
         }
         else
+        if (collision.tag == "InventoryLeftArm" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.LeftArm)
         {
-            //Debug.Log("**********");
-            if (collision.TryGetComponent(out ObjectInteraction interaction))
-            {
-                InGameObjects selected = interaction.objectType;
-                name.text = selected.name;
-                type.text = selected.type.ToString();
-                if (selected.type == InGameObjects.Type.Module)
-                {
-                    stats.enabled = false;
-                    def.enabled = true;
-                    def.text = selected.description;
-
-                    lvl.enabled = true;
-                    lvl.text = selected.lvl.ToString();
-                }
-                else
-                {
-                    stats.enabled = true;
-                    def.enabled = false;
-                    stats.text = "Attack:     " + selected.Attack + "\nDefense: " + selected.Defense + "\nLife:         " + selected.Life + "\nSpeed:   " + selected.Speed;
-                    lvl.enabled = false;
-                }
-            }
-
-
-
-            if(collision.tag == "InventoryHead" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Head)
-            {
-                positionToDrop = collision.gameObject;
-            }
-            else
-            if (collision.tag == "InventoryLeftArm" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.LeftArm)
-            {
-                positionToDrop = collision.gameObject;
-            }
-            else
-            if (collision.tag == "InventoryRightArm" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.RightArm)
-            {
-                positionToDrop = collision.gameObject;
-            }
-            else
-            if (collision.tag == "InventoryBody" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Body)
-            {
-                positionToDrop = collision.gameObject;
-            }
-            else
-            if (collision.tag == "InventoryLegs" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Leg)
-            {
-                positionToDrop = collision.gameObject;
-            }
-            else
-            if (collision.tag == "Module" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Module)
-            {
-                positionToDrop = collision.gameObject;
-            }
+            positionToDrop = collision.gameObject;
         }
+        else
+        if (collision.tag == "InventoryRightArm" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.RightArm)
+        {
+            positionToDrop = collision.gameObject;
+        }
+        else
+        if (collision.tag == "InventoryBody" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Body)
+        {
+            positionToDrop = collision.gameObject;
+        }
+        else
+        if (collision.tag == "InventoryLegs" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Leg)
+        {
+            positionToDrop = collision.gameObject;
+        }
+        else
+        if (collision.tag == "Module" && clone.GetComponent<ObjectInteraction>().objectType.type == InGameObjects.Type.Module)
+        {
+            positionToDrop = collision.gameObject;
+        }
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         objectToClone = null;
         positionToDrop = null;
+    }
+
+    private void ChangeSprite(List<SpriteResolver> gameObjects, InGameObjects iObject)
+    {
+        foreach(SpriteResolver rs in gameObjects)
+        {
+            rs.SetCategoryAndLabel(rs.GetCategory(), iObject.spriteName);
+        }
+    }
+    private void ChangeSprite(SpriteResolver gameObjects, InGameObjects iObject)
+    {
+        
+            
+        gameObjects.SetCategoryAndLabel(gameObjects.GetCategory(), iObject.spriteName);
+    
     }
 }
