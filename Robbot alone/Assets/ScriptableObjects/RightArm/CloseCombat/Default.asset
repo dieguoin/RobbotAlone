@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: default
   sprite: {fileID: -918664092, guid: 63332e05a8d3e3740bdb81fb6a7540df, type: 3}
+  spriteName: G
   objectName: Default
   description: default
   type: 1
@@ -23,3 +24,4 @@ MonoBehaviour:
   Attack: 1
   Defense: 1
   Speed: 1
+  lvl: 0

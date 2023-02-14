@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Gun
   sprite: {fileID: -2098991187, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
+  spriteName: C
   objectName: Gun
   description: c
   type: 2

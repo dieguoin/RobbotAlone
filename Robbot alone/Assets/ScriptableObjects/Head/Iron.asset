@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Iron
   sprite: {fileID: -2030216445, guid: 67ddc09ec091f204f9bacea93290c9be, type: 3}
+  spriteName: A
   objectName: Iron
   description: A
   type: 0
@@ -23,3 +24,4 @@ MonoBehaviour:
   Attack: 1
   Defense: 1
   Speed: 1
+  lvl: 0

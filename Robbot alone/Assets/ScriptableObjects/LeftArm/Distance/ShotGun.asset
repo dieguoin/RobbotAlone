@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: ShotGun
   sprite: {fileID: -609415616, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
+  spriteName: D
   objectName: ShotGun
   description: b
   type: 2
