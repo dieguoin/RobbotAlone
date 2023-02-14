@@ -7,6 +7,14 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject defaultObject;
     private Inventory inventory;
+
+    public Sprite DefHead;
+    public Sprite DefRighArm;
+    public Sprite DefLeftArm;
+    public Sprite DefBody;
+    public Sprite DefLegs;
+
+
     private void Awake()
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();

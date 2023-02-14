@@ -23,6 +23,14 @@ public class MouseControl : MonoBehaviour
     public TextMeshProUGUI def;
     public TextMeshProUGUI lvl;
 
+    public GameObject Head;
+    public GameObject Body;
+    public GameObject LeftArm;
+    public GameObject RightArm;
+    public GameObject Legs;
+
+
+
 
     private void Awake()
     {
@@ -90,6 +98,32 @@ public class MouseControl : MonoBehaviour
             originalGrabbed = null;
             return;
         }
+        //Debug.Log("dafsfdafdafd");
+        Debug.Log(clone.name);
+
+        if(clone.TryGetComponent(out ObjectInteraction interaction)){
+            if (interaction.objectType.type == InGameObjects.Type.Head)
+            {
+                Head.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+            }
+            else if(interaction.objectType.type == InGameObjects.Type.Body)
+            {
+                Body.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+            }
+            else if (interaction.objectType.type == InGameObjects.Type.LeftArm)
+            {
+                LeftArm.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+            }
+            else if (interaction.objectType.type == InGameObjects.Type.RightArm)
+            {
+                RightArm.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+            }
+            else if (interaction.objectType.type == InGameObjects.Type.Leg)
+            {
+                Legs.GetComponent<SpriteRenderer>().sprite = clone.GetComponent<Image>().sprite;
+            }
+        }
+
         GameObject newObject = GameObject.Instantiate(clone, positionToDrop.transform);
         positionToDrop.GetComponent<Image>().enabled = false;
         positionToDrop.GetComponent<BoxCollider2D>().enabled = false;

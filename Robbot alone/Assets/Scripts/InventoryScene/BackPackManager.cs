@@ -28,6 +28,7 @@ public class BackPackManager : MonoBehaviour
     }
     public void AddObject(GameObject newObject)
     {
+        Debug.Log("asdffffffffffff");
         RemoveEverything();
         backPackList.Add(newObject);
         UpdateBackPack();
