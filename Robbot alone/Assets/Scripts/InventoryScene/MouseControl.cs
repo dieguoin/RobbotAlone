@@ -14,6 +14,8 @@ public class MouseControl : MonoBehaviour
     private bool objectCloned = false;
     private BackPackManager backPackManager;
     [SerializeField] private ScrollRect menuMovement;
+
+    //public GameObject 
     [Header("Body parts")]
     public SpriteResolver headSprite;
     public SpriteResolver bodySprite;
@@ -34,6 +36,13 @@ public class MouseControl : MonoBehaviour
     //public SpriteResolver leftUpperLegSprite;
     //public SpriteResolver leftBottomLegSprite;
     //public SpriteResolver leftFootSprite;
+    [Header("default pieces")]
+    public InGameObjects defaultHead;
+    public InGameObjects defaultBody;
+    public InGameObjects defaultRightArm;
+    public InGameObjects defaultLeftArm;
+    public InGameObjects defaultLegs;
+    
 
     [Header("resto de cosas")]
 
@@ -68,6 +77,8 @@ public class MouseControl : MonoBehaviour
         worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
         transform.position = worldPosition;
 
+
+
     }
     private void OnMouseDown()
     {
@@ -87,7 +98,25 @@ public class MouseControl : MonoBehaviour
         {
             if(originalGrabbed.transform.parent.tag == "InventoryHead" || originalGrabbed.transform.parent.tag == "InventoryLeftArm" || originalGrabbed.transform.parent.tag == "InventoryRightArm" || originalGrabbed.transform.parent.tag == "InventoryBody" || originalGrabbed.transform.parent.tag == "InventoryLegs" || originalGrabbed.transform.parent.tag == "Module")
             {
-
+                switch (originalGrabbed.transform.parent.tag)
+                {
+                    case "InventoryHead":
+                        ChangeSprite(headSprite, defaultHead);
+                        break;
+                    case "InventoryLeftArm":
+                        ChangeSprite(leftArm, defaultLeftArm);
+                        break;
+                    case "InventoryRightArm":
+                        ChangeSprite(rightArm, defaultRightArm);
+                        break;
+                    case "InventoryBody":
+                        ChangeSprite(bodySprite, defaultBody);
+                        break;
+                    case "InventoryLegs":
+                        ChangeSprite(leftLeg, defaultLegs);
+                        ChangeSprite(rightLeg, defaultLegs);
+                        break;
+                }
                 originalGrabbed.transform.parent.GetComponent<Image>().enabled = true;
                 originalGrabbed.transform.parent.GetComponent<BoxCollider2D>().enabled = true;
                 Destroy(originalGrabbed);
@@ -192,7 +221,7 @@ public class MouseControl : MonoBehaviour
             {
                 stats.enabled = true;
                 def.enabled = false;
-                stats.text = "Attack: " + selected.Attack + "\nDefense: " + selected.Defense + "\nLife: " + selected.Life + "\nSpeed: " + selected.Speed;
+                stats.text = "Attack:     " + selected.Attack + "\nDefense: " + selected.Defense + "\nLife:         " + selected.Life + "\nSpeed:   " + selected.Speed;
                 lvl.enabled = false;
             }
         }

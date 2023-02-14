@@ -345,7 +345,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 873706249, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
+  m_Sprite: {fileID: -918664092, guid: 63332e05a8d3e3740bdb81fb6a7540df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -372,8 +372,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1390010888429495345}
   m_Bounds:
-    m_Center: {x: 0.08842564, y: 0.17361736, z: 0}
-    m_Extent: {x: 0.7119621, y: 1.0197332, z: 0}
+    m_Center: {x: -0.31769168, y: 0.24967337, z: 0}
+    m_Extent: {x: 1.0779798, y: 0.9931874, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CategoryHash: 0
   m_labelHash: 0
-  m_SpriteKey: 3.039788e-31
+  m_SpriteKey: -9.853805e+22
 --- !u!61 &1390010887561001451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -423,7 +423,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.31, y: 2.29}
+    oldSize: {x: 2.09, y: 2.18}
     newSize: {x: 1.31, y: 2.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -752,7 +752,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 679742600, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
+  m_Sprite: {fileID: -337303723, guid: 28b5155d867f3754f9415e90292d6d8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -779,8 +779,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1390010888387560002}
   m_Bounds:
-    m_Center: {x: 1.525086, y: 0.24141186, z: 0}
-    m_Extent: {x: 0.33503652, y: 0.643431, z: 0}
+    m_Center: {x: 1.6223292, y: 0.27724916, z: 0}
+    m_Extent: {x: 0.40755796, y: 0.6775855, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CategoryHash: 0
   m_labelHash: 0
-  m_SpriteKey: -4.8631164e+13
+  m_SpriteKey: 217595.72
 --- !u!1 &1390010887679941587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,12 +1658,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 873706249, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
+  m_Sprite: {fileID: 1253118698, guid: 5427bf892339e854c96ad24a07b1b66b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.09, y: 2.18}
+  m_Size: {x: 1.31, y: 2.29}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1685,8 +1685,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1390010887719335079}
   m_Bounds:
-    m_Center: {x: 0.31744665, y: 0.13116693, z: 0}
-    m_Extent: {x: 0.678569, y: 1.0273638, z: 0}
+    m_Center: {x: 0.24871266, y: 0.22049606, z: 0}
+    m_Extent: {x: 0.7292025, y: 1.0084021, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1737,7 +1737,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.31, y: 2.29}
-    newSize: {x: 2.09, y: 2.18}
+    newSize: {x: 1.31, y: 2.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -2236,12 +2236,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 679742600, guid: ea5b26263d4b8a740838ae26e50b2405, type: 3}
+  m_Sprite: {fileID: -1324072554, guid: 5427bf892339e854c96ad24a07b1b66b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.71, y: 1.33}
+  m_Size: {x: 1.14, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2263,8 +2263,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1390010887095763396}
   m_Bounds:
-    m_Center: {x: -2.212336, y: -0.32618368, z: 0}
-    m_Extent: {x: 0.3567773, y: 0.6358385, z: 0}
+    m_Center: {x: -2.1134925, y: -0.26520228, z: 0}
+    m_Extent: {x: 0.46765733, y: 0.58517575, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
