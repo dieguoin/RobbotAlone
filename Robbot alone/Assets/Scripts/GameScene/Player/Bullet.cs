@@ -11,13 +11,17 @@ public class Bullet : MonoBehaviour
         timer += Time.deltaTime;
         if(timer >= maxTime)
         {
+            Debug.Log("DESTROY BULLET");
+
             Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag != "Player" && collision.tag != "RegionSpawner")
+        if(collision.tag != "Player" && collision.tag != "RegionSpawner" && collision.tag != "Ignore")
         {
+            Debug.Log("DESTROY BULLET");
+
             Destroy(gameObject);
         }
     }

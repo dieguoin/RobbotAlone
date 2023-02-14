@@ -16,6 +16,9 @@ TagManager:
   - InventoryLegs
   - Module
   - Sword
+  - BulletEnemy
+  - Enemy
+  - Ignore
   layers:
   - Default
   - TransparentFX

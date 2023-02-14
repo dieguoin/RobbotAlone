@@ -18,8 +18,9 @@ MonoBehaviour:
   description: b
   type: 2
   weapon: 1
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 5801944083430336476, guid: 99806abe74ff6ec42b80b9e376788912, type: 3}
   Life: 5
   Attack: 5
   Defense: 5
   Speed: 5
+  lvl: 0

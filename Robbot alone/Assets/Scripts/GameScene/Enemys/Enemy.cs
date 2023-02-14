@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int nextPosition = 0;
-    private enum States { Patrol, Attacking};
-    private States currentState = States.Patrol;
+    public enum States { Patrol, Attacking, Idle};
+    public States currentState = States.Patrol;
 
     [SerializeField] public GameObject pointPrefab;
     [SerializeField] private List<Transform> patrolPositions = new List<Transform>();
@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public bool dmgCD;
     public int dmg;
     public float timeDmg;
+
+
 
     private void Start()
     {
@@ -37,7 +39,10 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case States.Attacking:
-
+                Debug.Log("SHOOOT");
+                currentState = States.Idle;
+                break;
+            case States.Idle:
                 break;
         }
     }
@@ -45,6 +50,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.tag == "Bullet")
         {
+            Debug.Log("DESTROY");
             Destroy(gameObject);
         }
     }
