@@ -81,13 +81,16 @@ public class PlayerMovement : MonoBehaviour
     public Image[] uiModules;
     public GameObject uiModParent;
 
-
+    //Animations
+    [Header("Animations")]
+    private AnimatorController animatorController;
 
 
     // Start is called before the first frame update
     private void Awake()
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        animatorController = GetComponentInChildren<AnimatorController>();
     }
     void Start()
     {
@@ -240,6 +243,8 @@ public class PlayerMovement : MonoBehaviour
         {
             bulletDirection = -1;
         }
+        animatorController.Move(speed);
+        
         //bulletDirection = (speed > 0) ? 1 : ((speed < 0) ? -1 : bulletDirection);
     }
     private bool IsGrounded()
@@ -269,10 +274,18 @@ public class PlayerMovement : MonoBehaviour
             }
         if (Input.GetKeyDown(gameManager.GetComponent<GameManager>().GetAction("Jump")) && IsGrounded())
         {
-            rb.AddForce(new Vector2(0, jumpForce * speedMultiplayer));
-            jumped = false;
-           // isJumping = true;
+            animatorController.EnableJump(true);
+            //WaitTime(1);
+            //Jump();
         }
+        //animator.SetBool("Jump", !IsGrounded());
+        animatorController.SetGrounded(IsGrounded());
+    }
+    public void Jump()
+    {
+        rb.AddForce(new Vector2(0, jumpForce * speedMultiplayer));
+        jumped = false;
+        // isJumping = true;
     }
     private void CheckLeftAction()
     {
@@ -280,7 +293,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        leftArm.Effect();
+        leftArm.Effect(animatorController.animator);
     }
     private void CheckRightAction()
     {
@@ -288,7 +301,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        rightArm.Effect();
+        rightArm.Effect(animatorController.animator);
     }
 
     public void ChangeLife(int dmgReceived)
@@ -310,7 +323,10 @@ public class PlayerMovement : MonoBehaviour
             gameManager.GetComponent<GameManager>().Death();
         }
     }
-
+    private IEnumerator WaitTime(int time)
+    {
+        yield return new WaitForSeconds(time);
+    }
     IEnumerator ShieldCooling()
     {
         shield = false;
