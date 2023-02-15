@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,9 +113,126 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Animacion disparo PISTOLA DE CLAVOS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 168.4
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71691fa9c0b52c4f8a4c4a34ab23275
+      internalID: 905037144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion disparo PISTOLA DE CLAVOS_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 168.4
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a32f5885e0ffe4ab07db446e53066c
+      internalID: -367844885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion disparo PISTOLA DE CLAVOS_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 168.4
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e269037ce80e0b4fa740e0f60244522
+      internalID: -585784175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion disparo PISTOLA DE CLAVOS_3
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 168.4
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ea3d0dc49132147a9568bf5155a78d
+      internalID: 100090456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion disparo PISTOLA DE CLAVOS_4
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 168.4
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76fec2485f4f6f14d95bdc604f271630
+      internalID: 1708015131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +243,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Animacion disparo PISTOLA DE CLAVOS_0: 905037144
+      Animacion disparo PISTOLA DE CLAVOS_1: -367844885
+      Animacion disparo PISTOLA DE CLAVOS_3: 100090456
+      Animacion disparo PISTOLA DE CLAVOS_2: -585784175
+      Animacion disparo PISTOLA DE CLAVOS_4: 1708015131
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
