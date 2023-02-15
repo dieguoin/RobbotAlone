@@ -181,6 +181,7 @@ public class PlayerMovement : MonoBehaviour
 
         int randSpawn = Random.Range(0, playerSpawner.Length);
         transform.position = playerSpawner[randSpawn].transform.position;
+        playerSpawner[randSpawn].transform.parent.gameObject.SetActive(true);
 
     }
 
