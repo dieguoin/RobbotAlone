@@ -61,6 +61,12 @@ public class MouseControl : MonoBehaviour
     //public GameObject RightArm;
     //public GameObject Legs;
 
+    public AudioClip equipar;
+
+    public AudioClip desEquipar;
+
+    public GameObject SoundManager;
+
 
 
 
@@ -145,12 +151,25 @@ public class MouseControl : MonoBehaviour
             clone.GetComponent<SpriteRenderer>().size = new Vector2(30, 30);
             clone.transform.localScale = new Vector3(1, 1);
             backPackManager.AddObject(clone);
+
+            //SoundManager.GetComponent<AudioSource>().enabled = false;
+            // SoundManager.GetComponent<AudioSource>().enabled = true;
+            SoundManager.GetComponent<AudioSource>().clip = desEquipar;
+            SoundManager.GetComponent<AudioSource>().Play();
+
             Destroy(clone);
             objectCloned = false;
             originalGrabbed = null;
             return;
         }
         //Debug.Log("dafsfdafdafd");
+       // SoundManager.GetComponent<AudioSource>().enabled = false;
+
+       // SoundManager.GetComponent<AudioSource>().enabled = true;
+        SoundManager.GetComponent<AudioSource>().clip = equipar;
+        SoundManager.GetComponent<AudioSource>().Play();
+
+        Debug.Log("EQUIPAR");
         Debug.Log(clone.name);
 
         if(clone.TryGetComponent(out ObjectInteraction interaction)){

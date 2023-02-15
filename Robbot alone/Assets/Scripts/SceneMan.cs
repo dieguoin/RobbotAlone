@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class SceneMan : MonoBehaviour
 {
     private static SceneMan instance;
+
+    //public SoundManager soundManager;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
