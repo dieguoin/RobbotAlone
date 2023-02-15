@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.U2D.Animation;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -55,6 +56,12 @@ public class PlayerMovement : MonoBehaviour
     public BodyParts rightArm;
     public BodyParts legs;
 
+    public List<SpriteResolver> headSprites;
+    public List<SpriteResolver> bodySprites;
+    public List<SpriteResolver> rightArmSprites;
+    public List<SpriteResolver> leftArmSprites;
+    public List<SpriteResolver> legsSprites;
+
     [SerializeField] private InGameObjects defaultHead;
     [SerializeField] private InGameObjects defaultBody;
     [SerializeField] private InGameObjects defaultLeftArm;
@@ -102,6 +109,14 @@ public class PlayerMovement : MonoBehaviour
         rightArm.part = (inventory.bodyParts[2] != null) ? inventory.bodyParts[2] : defaultRightArm;
         body.part = (inventory.bodyParts[3] != null) ? inventory.bodyParts[3] : defaultBody;
         legs.part = (inventory.bodyParts[4] != null) ? inventory.bodyParts[4] : defaultLegs;
+
+        //colocar sprites
+        ChangeSprite(headSprites, head.part);
+        ChangeSprite(bodySprites, body.part);
+        ChangeSprite(leftArmSprites, leftArm.part);
+        ChangeSprite(rightArmSprites, rightArm.part);
+        ChangeSprite(legsSprites, legs.part);
+
         //Calcular Vida Máxima
         Stats.lifePoints = head.part.Life;
         Stats.lifePoints += leftArm.part.Life;
@@ -417,5 +432,12 @@ public class PlayerMovement : MonoBehaviour
                 Stats.lifePoints += 5;
         }
 
+    }
+    private void ChangeSprite(List<SpriteResolver> gameObjects, InGameObjects iObject)
+    {
+        foreach (SpriteResolver rs in gameObjects)
+        {
+            rs.SetCategoryAndLabel(rs.GetCategory(), iObject.spriteName);
+        }
     }
 }
