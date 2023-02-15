@@ -18970,7 +18970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141679110558897467, guid: 164da2ab34fd8544f9cdbf1f1769ad59, type: 3}
       propertyPath: m_Constraints
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7141679110558897469, guid: 164da2ab34fd8544f9cdbf1f1769ad59, type: 3}
       propertyPath: m_RootOrder
