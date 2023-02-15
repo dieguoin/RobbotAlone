@@ -86,6 +86,9 @@ public class PlayerMovement : MonoBehaviour
     private AnimatorController animatorController;
 
 
+    public GameObject[] playerSpawner;
+
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -160,6 +163,10 @@ public class PlayerMovement : MonoBehaviour
         life = Stats.lifePoints;
         lifeUI = 1;
         lifeImg.fillAmount = 1;
+
+        int randSpawn = Random.Range(0, playerSpawner.Length);
+        transform.position = playerSpawner[randSpawn].transform.position;
+
     }
 
     // Update is called once per frame
