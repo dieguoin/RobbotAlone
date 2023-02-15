@@ -99,6 +99,10 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject[] playerSpawner;
 
+    public AudioClip hit;
+
+    public GameObject AudioEffects;
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -357,6 +361,9 @@ public class PlayerMovement : MonoBehaviour
             dmge = 1;
         life -= dmge;
         lifeUI = (float)life / (float)Stats.lifePoints;
+
+        AudioEffects.GetComponent<AudioSource>().clip = hit;
+        AudioEffects.GetComponent<AudioSource>().Play();
 
         lifeImg.fillAmount = lifeUI;
         if(life <= 0)
