@@ -17,4 +17,12 @@ public class CanvasInitMenu : MonoBehaviour
     {
         panel.SetActive(false);
     }
+    public void NextScene(string sceneName)
+    {
+        sceneManager.changeScene(sceneName);
+    }
+    public void ExitGame()
+    {
+        sceneManager.ExitGame();
+    }
 }

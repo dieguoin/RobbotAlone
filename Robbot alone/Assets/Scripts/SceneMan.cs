@@ -32,7 +32,7 @@ public class SceneMan : MonoBehaviour
     {
         SceneManager.LoadScene(name);
     }
-    public void exitGame()
+    public void ExitGame()
     {
         Application.Quit();
     }

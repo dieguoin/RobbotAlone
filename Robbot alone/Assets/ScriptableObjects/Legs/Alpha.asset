@@ -20,8 +20,8 @@ MonoBehaviour:
   type: 4
   weapon: 0
   bulletPrefab: {fileID: 0}
-  Life: 15
-  Attack: 15
-  Defense: 15
-  Speed: 15
+  Life: 7
+  Attack: 7
+  Defense: 7
+  Speed: 7
   lvl: 0
