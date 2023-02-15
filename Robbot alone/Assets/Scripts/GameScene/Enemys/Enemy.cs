@@ -5,18 +5,22 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int nextPosition = 0;
-    public enum States { Patrol, Attacking, Idle};
+    public enum States { Alone, Patrol, Attacking, Idle};
     public States currentState = States.Patrol;
 
     [SerializeField] public GameObject pointPrefab;
     [SerializeField] private List<Transform> patrolPositions = new List<Transform>();
     public float speed;
+    private Rigidbody2D rb;
 
     public bool dmgCD;
     public int dmg;
     public float timeDmg;
 
-
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
@@ -27,10 +31,21 @@ public class Enemy : MonoBehaviour
     {
         switch (currentState)
         {
+            case States.Alone:
+                
+                break;
             case States.Patrol:
                 if(patrolPositions.Count == 0)
                 {
                     return;
+                }
+                if(patrolPositions[nextPosition].position.x - transform.position.x < 0)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
                 transform.position = Vector3.MoveTowards(transform.position, patrolPositions[nextPosition].position, speed * Time.deltaTime);
                 if(transform.position == patrolPositions[nextPosition].position)
@@ -78,8 +93,8 @@ public class Enemy : MonoBehaviour
     }
     public void GeneratePoint()
     {
-        GameObject newPoint = GameObject.Instantiate(pointPrefab, transform.parent);
-        patrolPositions.Add(newPoint.transform);
+        GameObject newPoint = GameObject.Instantiate(pointPrefab, transform.GetChild(1));
+        patrolPositions.Add(null);
     }
 
     public IEnumerator CoolingDown()
