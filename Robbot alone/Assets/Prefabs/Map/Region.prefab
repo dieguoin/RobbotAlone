@@ -48,7 +48,7 @@ MonoBehaviour:
   backGroundPrefab: {fileID: 478239242802956251, guid: 04e910efa8c562a4ab7604252e31d0d6, type: 3}
   mapSpawnerPrefab: {fileID: 0}
   playerSpawnPoint: {fileID: 0}
-  playerExtractionPoint: {fileID: 0}
+  playerExtractionPoint: {fileID: 2681440000080552547, guid: c433846df6e6ffd4f9bb6b2392988fab, type: 3}
   floorPrefab: {fileID: 1558249811103397526, guid: 5046a9cdc9477514086d60036fb2898b, type: 3}
   stairsPrefab: {fileID: 0}
   WallPrefab: {fileID: 5595594614420804056, guid: d659dce093db2604a9cd983ec818041d, type: 3}
@@ -59,3 +59,4 @@ MonoBehaviour:
   enemy1Prefab: {fileID: 2586087332018404217, guid: 48a9052ee6e037249879e35829e5a44c, type: 3}
   enemy2Prefab: {fileID: 1907903718830897915, guid: a2182976a9162464392903e5ae533849, type: 3}
   enemy3Prefab: {fileID: 0}
+  lootSpawner: {fileID: 1621487094079903167, guid: ff3f80a1be04daa4ea550f6c930a00b8, type: 3}
