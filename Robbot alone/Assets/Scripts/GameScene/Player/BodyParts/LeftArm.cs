@@ -14,7 +14,7 @@ public class LeftArm : BodyParts
         {
             case (InGameObjects.ArmType.Gun):
                 GameObject bullet = GameObject.Instantiate(part.bulletPrefab, transform.position, transform.rotation);
-                Debug.Log(Input.mousePosition - transform.position);
+                animator.SetBool("LeftShot", true);
                 bullet.GetComponent<Rigidbody2D>().AddForce(Vector3.Normalize(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position) * SHOOTFORCE, 0);
                 break;
             case (InGameObjects.ArmType.Sword):

@@ -9,19 +9,17 @@ public class EnemyShoot : MonoBehaviour
     public Enemy shooterEn;
 
     public bool readyShot;
-
+    private Rigidbody2D rb;
     public GameObject bulletPrefab;
 
     public float SHOOTFORCE;
+    private void Awake()
+    {
+        rb = GetComponentInParent<Rigidbody2D>();
+    }
     void Start()
     {
         readyShot = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -31,8 +29,8 @@ public class EnemyShoot : MonoBehaviour
             readyShot = false;
             shooterEn.currentState = Enemy.States.Attacking;
 
-            GameObject bullet = GameObject.Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce((collision.transform.position - transform.position) * SHOOTFORCE, 0);
+            //GameObject bullet = GameObject.Instantiate(bulletPrefab, transform.position, transform.rotation);
+            rb.AddForce((collision.transform.position - transform.position) * SHOOTFORCE, 0);
             
 
             Debug.Log("disparando");
@@ -58,7 +56,7 @@ public class EnemyShoot : MonoBehaviour
 
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         //shooterEn.currentState = Enemy.States.Idle;
         // shooterEn.currentState = Enemy.States.Patrol;
         readyShot = true;
