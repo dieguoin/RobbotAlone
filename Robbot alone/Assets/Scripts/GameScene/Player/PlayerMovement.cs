@@ -93,6 +93,10 @@ public class PlayerMovement : MonoBehaviour
     private AnimatorController animatorController;
 
 
+    public Animator shieldAnim;
+   // public SpriteRenderer shieldImg;
+
+
     public GameObject[] playerSpawner;
 
 
@@ -182,6 +186,20 @@ public class PlayerMovement : MonoBehaviour
         int randSpawn = Random.Range(0, playerSpawner.Length);
         transform.position = playerSpawner[randSpawn].transform.position;
         playerSpawner[randSpawn].transform.parent.gameObject.SetActive(true);
+
+        if (shield)
+        {
+           // shieldImg.enabled = true;
+            shieldAnim.SetInteger("ShieldState", 1);
+        }
+        else
+        {
+            shieldAnim.SetInteger("ShieldState", 0);
+         //   shieldImg.enabled = false;
+
+        }
+
+
 
     }
 
@@ -352,9 +370,20 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator ShieldCooling()
     {
+        shieldAnim.SetInteger("ShieldState", 2);
+        StartCoroutine(ReturnTime());
         shield = false;
         yield return new WaitForSeconds(shieldCD);
+       // shieldImg.enabled = true;
+        shieldAnim.SetInteger("ShieldState", 1);
         shield = true;
+    }
+    IEnumerator ReturnTime()
+    {
+        yield return new WaitForSeconds(2);
+        shieldAnim.SetInteger("ShieldState", 0);
+     //   shieldImg.enabled = false;
+
     }
 
     public void AddModule(string mod, int tipo, Sprite sprite)
