@@ -53,6 +53,11 @@ public class Enemy : MonoBehaviour
             Debug.Log("DESTROY");
             Destroy(gameObject);
         }
+        if (collision.tag == "Sword")
+        {
+            Debug.Log("DESTROY");
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
