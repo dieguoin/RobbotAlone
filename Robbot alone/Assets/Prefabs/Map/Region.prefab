@@ -56,7 +56,7 @@ MonoBehaviour:
   floorDoorPrefab: {fileID: 7181712049997491651, guid: dec2495ca4834c94c88005afdd5fc81f, type: 3}
   damageDoorPrefab: {fileID: 3274312382131355198, guid: 31459672eabbf24408398e70d4313c69, type: 3}
   buttonPrefab: {fileID: 1384488743947644931, guid: 525908d20676f7f418fda2d7c3b0c0fc, type: 3}
-  enemy1Prefab: {fileID: 2586087332018404217, guid: 48a9052ee6e037249879e35829e5a44c, type: 3}
-  enemy2Prefab: {fileID: 1907903718830897915, guid: a2182976a9162464392903e5ae533849, type: 3}
-  enemy3Prefab: {fileID: 0}
+  enemy1Prefab: {fileID: 5536003426213378250, guid: 09d23e9d7c3986d4db2810d0c476196c, type: 3}
+  enemy2Prefab: {fileID: 1485826679020140861, guid: 1dade1c5255a7dc40b2d22095b6f11d5, type: 3}
+  enemy3Prefab: {fileID: 1211904680379309416, guid: b3821e9db15e107418d364372d3d9906, type: 3}
   lootSpawner: {fileID: 1621487094079903167, guid: ff3f80a1be04daa4ea550f6c930a00b8, type: 3}

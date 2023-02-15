@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int nextPosition = 0;
-    public enum States { Alone, Patrol, Attacking, Idle};
-    public States currentState = States.Patrol;
+    public enum States {Patrol, Attacking, Idle};
+    public States currentState;
 
     [SerializeField] public GameObject pointPrefab;
     [SerializeField] private List<Transform> patrolPositions = new List<Transform>();
@@ -25,15 +25,17 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         dmgCD = true;
+        if(currentState == States.Patrol)
+        {
+            transform.GetChild(1).parent = transform.parent;
+        }
     }
 
     private void Update()
     {
         switch (currentState)
         {
-            case States.Alone:
-                
-                break;
+
             case States.Patrol:
                 if(patrolPositions.Count == 0)
                 {

@@ -15,7 +15,7 @@ public class EnemyShoot : MonoBehaviour
     public float SHOOTFORCE;
     private void Awake()
     {
-        rb = GetComponentInParent<Rigidbody2D>();
+        rb = transform.parent.GetComponent<Rigidbody2D>();
     }
     void Start()
     {

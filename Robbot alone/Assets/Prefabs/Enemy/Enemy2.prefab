@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1485826679020140861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.356044, y: -1.5170882, z: 0.25492793}
-  m_LocalScale: {x: 1, y: 1.54, z: 1}
+  m_LocalScale: {x: 0.33, y: 0.5082, z: 0.33}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7097104535829953940}
@@ -105,7 +105,7 @@ MonoBehaviour:
   currentState: 0
   pointPrefab: {fileID: 5583377814718665099, guid: 8596ed572890ed8438bbeda7ef3a8875, type: 3}
   patrolPositions: []
-  speed: 10
+  speed: 5
   dmgCD: 0
   dmg: 1
   timeDmg: 0

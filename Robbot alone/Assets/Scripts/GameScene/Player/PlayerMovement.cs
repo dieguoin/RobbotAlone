@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private int moveingKeys = 0;
     private float speed = 0;
     const float DEFAULTMULTIPLAYER = 1;
-    const float MULTIPLAYER = 1.3f;
+    const float MULTIPLAYER = 1.1f;
     private float speedMultiplayer = 1;
     const float bendDownSpeed = 2f;
     

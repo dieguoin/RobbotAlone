@@ -113,8 +113,8 @@ Transform:
   m_GameObject: {fileID: 1211904680379309416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.11, y: 0, z: 0.25492793}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1485071342935160265}
   - {fileID: 4809200718862732677}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextPosition: 0
-  currentState: 0
+  currentState: 2
   pointPrefab: {fileID: 5583377814718665099, guid: 8596ed572890ed8438bbeda7ef3a8875, type: 3}
   patrolPositions: []
   speed: 10
